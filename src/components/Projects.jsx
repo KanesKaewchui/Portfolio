@@ -23,6 +23,20 @@ const projects = [
     description: 'A personal portfolio to showcase my projects and skills.',
     link: '#',
   },
+  {
+    image: 'https://via.placeholder.com/300',
+    name: 'Portfolio Website',
+    languages: 'HTML, CSS, JavaScript',
+    description: 'A personal portfolio to showcase my projects and skills.',
+    link: '#',
+  },
+  {
+    image: 'https://via.placeholder.com/300',
+    name: 'Portfolio Website',
+    languages: 'HTML, CSS, JavaScript',
+    description: 'A personal portfolio to showcase my projects and skills.',
+    link: '#',
+  },
 ];
 
 export default function Projects() {

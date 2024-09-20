@@ -11,13 +11,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { useTheme } from '@mui/material/styles'; // เพิ่มส่วนนี้เพื่อตรวจสอบธีมปัจจุบัน
+import { useTheme } from '@mui/material/styles';
 
-const pages = ['Hero', 'Projects', 'Contact', 'Footer'];
+const pages = ['Projects', 'Contact', 'Resume'];
 
 export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const theme = useTheme(); // ใช้ useTheme เพื่อเข้าถึงสีในธีม
+  const theme = useTheme();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -30,7 +30,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: theme.palette.background.default }} // ใช้สีพื้นหลังจากธีม
+      sx={{ backgroundColor: theme.palette.background.default }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -45,7 +45,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: theme.palette.text.primary, // สีตัวอักษรตามธีม
+              color: theme.palette.text.primary,
               textDecoration: 'none',
             }}
           >
@@ -87,7 +87,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
                     sx={{
                       textAlign: 'center',
                       textDecoration: 'none',
-                      color: theme.palette.text.primary, // สีตามธีม
+                      color: theme.palette.text.primary,
                     }}
                   >
                     {page}
@@ -104,7 +104,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
                 onClick={handleCloseNavMenu}
                 component="a"
                 href={`#${page}`}
-                sx={{ my: 2, color: theme.palette.text.primary, display: 'block' }} // สีตัวอักษรตามธีม
+                sx={{ my: 2, color: theme.palette.text.primary, display: 'block' }}
               >
                 {page}
               </Button>
