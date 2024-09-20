@@ -23,20 +23,27 @@ export default function Hero() {
           justifyContent: 'center',
           height: '100%',
           width: '100%',
-          backgroundColor: theme.palette.mode === 'light' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)', // สีพื้นหลังปรับตามโหมด
+          backgroundColor: theme.palette.mode === 'light' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)', 
           padding: '0 20px',
           textAlign: 'center',
         }}
       >
         <Typography
           variant="h2"
-          sx={{ fontSize: { xs: '2rem', md: '4rem' }, color: theme.palette.text.primary }} // ใช้ theme.palette.text.primary เพื่อตามโหมด
+          sx={{ fontSize: { xs: '2rem', md: '4rem' }, color: theme.palette.text.primary }} 
         >
-          Hi, I'm Kanes Kanwchui
+          Hi I'm Kanes Kanwchui
         </Typography>
         <Typography
           variant="subtitle2"
-          sx={{ mt: 2, fontSize: { xs: '1rem', md: '1.5rem' }, color: theme.palette.text.secondary }} // ใช้ theme.palette.text.secondary
+          gutterBottom
+          sx={{ 
+            mt: 2, 
+            fontSize: { xs: '1rem', md: '1.4rem' }, 
+            color: theme.palette.text.secondary,
+            textAlign: 'justify',
+            whiteSpace: 'pre-line',
+           }} 
         >
           I am a full-stack developer with experience from the JSD Generation boot camp, where I interned as a full-stack developer. This opportunity
           helped me enhance my skills in programming, web development, and full-stack technologies while working in a professional environment, allowing me to grow both technically and personally.
