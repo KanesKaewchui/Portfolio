@@ -11,12 +11,13 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles'; // เพิ่มส่วนนี้เพื่อตรวจสอบธีมปัจจุบัน
 
 const pages = ['Hero', 'Projects', 'Contact', 'Footer'];
 
 export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const theme = useTheme(); // ใช้ useTheme เพื่อเข้าถึงสีในธีม
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -27,7 +28,10 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   };
 
   return (
-    <AppBar position="fixed">
+    <AppBar
+      position="fixed"
+      sx={{ backgroundColor: theme.palette.background.default }} // ใช้สีพื้นหลังจากธีม
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -41,7 +45,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: theme.palette.text.primary, // สีตัวอักษรตามธีม
               textDecoration: 'none',
             }}
           >
@@ -77,7 +81,15 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography component="a" href={`#${page}`} sx={{ textAlign: 'center', textDecoration: 'none' }}>
+                  <Typography
+                    component="a"
+                    href={`#${page}`}
+                    sx={{
+                      textAlign: 'center',
+                      textDecoration: 'none',
+                      color: theme.palette.text.primary, // สีตามธีม
+                    }}
+                  >
                     {page}
                   </Typography>
                 </MenuItem>
@@ -92,7 +104,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
                 onClick={handleCloseNavMenu}
                 component="a"
                 href={`#${page}`}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: theme.palette.text.primary, display: 'block' }} // สีตัวอักษรตามธีม
               >
                 {page}
               </Button>
