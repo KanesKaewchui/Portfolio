@@ -9,12 +9,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+const pages = ['Hero', 'Projects', 'Contact', 'Footer'];
 
-const pages = ['Porjects', 'Resume', 'Contact'];
-
-
-export default function ResponsiveAppBar() {
+export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -33,7 +34,7 @@ export default function ResponsiveAppBar() {
             variant="h6"
             noWrap
             component="a"
-            href="Home"
+            href="#Hero"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -76,46 +77,33 @@ export default function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography component="a" href={`#${page}`} sx={{ textAlign: 'center', textDecoration: 'none' }}>
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="Home"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            KANES
-          </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' ,justifyContent: 'flex-end' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
+                component="a"
+                href={`#${page}`}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
             ))}
           </Box>
+
+          <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
+            {currentTheme === 'light' ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
-
-
