@@ -1,19 +1,19 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { useTheme } from '@mui/material/styles';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import MenuItem from "@mui/material/MenuItem";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { useTheme } from "@mui/material/styles";
 
-const pages = ['Projects', 'Contact', 'Resume'];
+const pages = ["Projects", "Contact", "Resume"];
 
 export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -30,8 +30,7 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
   return (
     <AppBar
       position="fixed"
-      sx={{ backgroundColor: theme.palette.background.default }}
-    >
+      sx={{ backgroundColor: theme.palette.background.default }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -41,55 +40,51 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
             href="#Hero"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: ".3rem",
               color: theme.palette.text.primary,
-              textDecoration: 'none',
-            }}
-          >
+              textDecoration: "none",
+            }}>
             KANES
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+              color="inherit">
               <MenuIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
-            >
+              sx={{ display: { xs: "block", md: "none" } }}>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography
                     component="a"
                     href={`#${page}`}
                     sx={{
-                      textAlign: 'center',
-                      textDecoration: 'none',
+                      textAlign: "center",
+                      textDecoration: "none",
                       color: theme.palette.text.primary,
-                    }}
-                  >
+                    }}>
                     {page}
                   </Typography>
                 </MenuItem>
@@ -97,22 +92,33 @@ export default function ResponsiveAppBar({ toggleTheme, currentTheme }) {
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex", justifyContent: "flex-end" },
+            }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
                 component="a"
                 href={`#${page}`}
-                sx={{ my: 2, color: theme.palette.text.primary, display: 'block' }}
-              >
+                sx={{
+                  my: 2,
+                  color: theme.palette.text.primary,
+                  display: "block",
+                }}>
                 {page}
               </Button>
             ))}
           </Box>
 
           <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
-            {currentTheme === 'light' ? <Brightness7Icon /> : <Brightness4Icon />}
+            {currentTheme === "light" ? (
+              <Brightness7Icon />
+            ) : (
+              <Brightness4Icon />
+            )}
           </IconButton>
         </Toolbar>
       </Container>
