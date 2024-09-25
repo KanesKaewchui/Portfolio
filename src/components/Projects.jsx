@@ -10,10 +10,10 @@ import { useTheme } from "@mui/material/styles";
 
 const projects = [
   {
-    image: "https://via.placeholder.com/300",
-    name: "Currency Converter",
-    languages: "React, Node.js, Tailwind CSS",
-    description: "A web app to convert currencies in real-time.",
+    image: "public/playhub.jpg",
+    name: "Playhub",
+    languages: "React, Node.js, MongoDB, MUI",
+    description: "Fitness web app",
     link: "#",
   },
   {
@@ -40,10 +40,12 @@ const projects = [
 ];
 
 export default function Projects() {
-  const theme = useTheme(); // ใช้ theme ปัจจุบันสำหรับ light และ dark mode
+  const theme = useTheme();
 
   return (
-    <Box id="Projects" sx={{ py: 5 }}>
+    <Box id="Projects" sx={{ py: 12, px: 2 }}>
+      {" "}
+      {/* เพิ่ม px เพื่อเว้นขอบด้านซ้ายและขวา */}
       <Typography
         variant="h4"
         sx={{ textAlign: "center", mb: 4, color: theme.palette.text.primary }}>
@@ -51,17 +53,21 @@ export default function Projects() {
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {projects.map((project, index) => (
-          <Grid item key={index} xs={12} md={6}>
+          <Grid item key={index} xs={12} sm={10} md={6}>
             <Card
               sx={{
                 backgroundColor: theme.palette.background.paper,
                 color: theme.palette.text.primary,
+                maxWidth: "100%", // กำหนดความกว้างไม่ให้เกิน 100% ของ container
+                mx: "auto", // ทำให้การ์ดจัดอยู่กลาง
+                px: 1, // เว้นขอบซ้ายขวา 10px (1rem)
               }}>
               <CardMedia
                 component="img"
-                height="140"
+                height="240" // ความสูงของการ์ด
                 image={project.image}
                 alt={project.name}
+                sx={{ objectFit: "cover" }} // ทำให้ภาพอยู่ในพื้นที่ที่กำหนด
               />
               <CardContent>
                 <Typography variant="h5" component="div">

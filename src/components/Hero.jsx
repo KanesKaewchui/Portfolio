@@ -6,6 +6,13 @@ import { useTheme } from "@mui/material/styles";
 export default function Hero() {
   const theme = useTheme();
 
+  const handleScrollToProjects = () => {
+    const projectsSection = document.getElementById("Projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Box
       id="Hero"
@@ -61,12 +68,14 @@ export default function Hero() {
             maxWidth: "800px",
             width: "100%",
             mt: 2,
+            textAlign: "left",
           }}>
           <Typography
             variant="subtitle1"
             gutterBottom
             sx={{
-              fontSize: { fontWeight: "lighter", fontSize: "20px" },
+              fontSize: { xs: "1rem", md: "1.25rem" },
+              fontWeight: "lighter",
               color: theme.palette.text.secondary,
               textAlign: "center",
             }}>
@@ -83,6 +92,38 @@ export default function Hero() {
             technically and personally.
           </Typography>
         </Box>
+        <Box
+          sx={{
+            mt: 4,
+            animation: "bounce 1.4s infinite",
+            cursor: "pointer",
+          }}
+          onClick={handleScrollToProjects}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-chevron-down">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </Box>
+        <style>
+          {`
+            @keyframes bounce {
+              0%, 100% {
+                transform: translateY(0);
+              }
+              50% {
+                transform: translateY(20px);
+              }
+            }
+          `}
+        </style>
       </Box>
     </Box>
   );
