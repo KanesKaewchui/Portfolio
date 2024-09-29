@@ -14,14 +14,14 @@ const projects = [
     name: "Playhub",
     languages: "React, Node.js, MongoDB, MUI",
     description: "Fitness web app",
-    link: "#",
+    link: "https://chiba-matcha-front-end.vercel.app/",
   },
   {
     image: "https://via.placeholder.com/300",
-    name: "Portfolio Website",
-    languages: "HTML, CSS, JavaScript",
-    description: "A personal portfolio to showcase my projects and skills.",
-    link: "#",
+    name: "Currency Converter",
+    languages: "React, JavaScript",
+    description: "currency converter project",
+    link: "https://currency-converter-project-sand.vercel.app/",
   },
   {
     image: "https://via.placeholder.com/300",
@@ -44,8 +44,6 @@ export default function Projects() {
 
   return (
     <Box id="Projects" sx={{ py: 12, px: 2 }}>
-      {" "}
-      {/* เพิ่ม px เพื่อเว้นขอบด้านซ้ายและขวา */}
       <Typography
         variant="h4"
         sx={{ textAlign: "center", mb: 4, color: theme.palette.text.primary }}>
@@ -53,24 +51,31 @@ export default function Projects() {
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {projects.map((project, index) => (
-          <Grid item key={index} xs={12} sm={10} md={6}>
+          <Grid item key={index} xs={10} sm={8} md={5}>
             <Card
               sx={{
                 backgroundColor: theme.palette.background.paper,
                 color: theme.palette.text.primary,
-                maxWidth: "100%", // กำหนดความกว้างไม่ให้เกิน 100% ของ container
-                mx: "auto", // ทำให้การ์ดจัดอยู่กลาง
-                px: 1, // เว้นขอบซ้ายขวา 10px (1rem)
+                maxWidth: "100%",
+                mx: "auto",
+                px: 1,
               }}>
               <CardMedia
                 component="img"
-                height="240" // ความสูงของการ์ด
+                height="200"
                 image={project.image}
                 alt={project.name}
-                sx={{ objectFit: "cover" }} // ทำให้ภาพอยู่ในพื้นที่ที่กำหนด
+                sx={{
+                  objectFit: "cover",
+                  borderRadius: "10px",
+                  marginTop: "20px",
+                  width: "96%",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
               />
               <CardContent>
-                <Typography variant="h5" component="div">
+                <Typography variant="h5" component="div" sx={{ my: "8px" }}>
                   {project.name}
                 </Typography>
                 <Typography

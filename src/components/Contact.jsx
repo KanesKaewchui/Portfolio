@@ -22,12 +22,15 @@ export default function Contact() {
         Contact Me
       </Typography>
 
-      {/* Contact Form or Email */}
       <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
         <Grid container spacing={2} maxWidth="md">
           <Grid item xs={12}>
-            <Typography variant="h6" sx={{ color: theme.palette.text.primary }}>
-              Email: kanes.contact@example.com
+            <Typography
+              variant="h6"
+              display="flex"
+              justifyContent="center"
+              sx={{ color: theme.palette.text.primary }}>
+              Email: kaneskaewchui1@gmail.com
             </Typography>
           </Grid>
 
@@ -39,25 +42,19 @@ export default function Contact() {
               Connect with me on Social Media
             </Typography>
             <IconButton
-              href="https://linkedin.com"
+              href="www.linkedin.com/in/kanes-kaewchui-131851235"
               target="_blank"
               sx={{ color: theme.palette.text.primary }}>
               <LinkedInIcon />
             </IconButton>
             <IconButton
-              href="https://github.com"
+              href="https://github.com/KanesKaewchui"
               target="_blank"
               sx={{ color: theme.palette.text.primary }}>
               <GitHubIcon />
             </IconButton>
             <IconButton
-              href="https://twitter.com"
-              target="_blank"
-              sx={{ color: theme.palette.text.primary }}>
-              <TwitterIcon />
-            </IconButton>
-            <IconButton
-              href="mailto:kanes.contact@example.com"
+              href="mailto:kaneskaewchui1@gmail.com"
               sx={{ color: theme.palette.text.primary }}>
               <EmailIcon />
             </IconButton>
