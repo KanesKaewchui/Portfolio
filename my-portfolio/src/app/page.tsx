@@ -1,99 +1,196 @@
 import Image from "next/image";
+import Link from "next/link";
+import { projects } from "./data/projects";
+import ProjectCard from "./components/ProjectCard";
 
 export default function Home() {
   return (
-    // <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-    //   <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-    //     <Image
-    //       className="dark:invert"
-    //       src="/next.svg"
-    //       alt="Next.js logo"
-    //       width={180}
-    //       height={38}
-    //       priority
-    //     />
-    //     <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-    //       <li className="mb-2 tracking-[-.01em]">
-    //         Get started by editing{" "}
-    //         <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-    //           src/app/page.tsx
-    //         </code>
-    //         .
-    //       </li>
-    //       <li className="tracking-[-.01em]">
-    //         Save and see your changes instantly.
-    //       </li>
-    //     </ol>
-
-    //     <div className="flex gap-4 items-center flex-col sm:flex-row">
-    //       <a
-    //         className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-    //         href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer">
-    //         <Image
-    //           className="dark:invert"
-    //           src="/vercel.svg"
-    //           alt="Vercel logomark"
-    //           width={20}
-    //           height={20}
-    //         />
-    //         Deploy now
-    //       </a>
-    //       <a
-    //         className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-    //         href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //         target="_blank"
-    //         rel="noopener noreferrer">
-    //         Read our docs
-    //       </a>
-    //     </div>
-    //   </main>
-    //   <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-    //     <a
-    //       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-    //       href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer">
-    //       <Image
-    //         aria-hidden
-    //         src="/file.svg"
-    //         alt="File icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Learn
-    //     </a>
-    //     <a
-    //       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-    //       href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer">
-    //       <Image
-    //         aria-hidden
-    //         src="/window.svg"
-    //         alt="Window icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Examples
-    //     </a>
-    //     <a
-    //       className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-    //       href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-    //       target="_blank"
-    //       rel="noopener noreferrer">
-    //       <Image
-    //         aria-hidden
-    //         src="/globe.svg"
-    //         alt="Globe icon"
-    //         width={16}
-    //         height={16}
-    //       />
-    //       Go to nextjs.org →
-    //     </a>
-    //   </footer>
-    // </div>
-    <div>TEST</div>
+    <main>
+      {/* Header / Nav */}
+      <header className="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-black/20">
+        <nav className="container-px mx-auto flex h-14 items-center justify-between">
+          <Link href="#home" className="font-bold tracking-wide">
+            Kanes Kaewchui
+          </Link>
+          <ul className="hidden md:flex items-center gap-6 text-sm">
+            <li>
+              <a href="#about" className="hover:opacity-80">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="hover:opacity-80">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="hover:opacity-80">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:opacity-80">
+                Contact
+              </a>
+            </li>
+          </ul>
+          <a className="btn-primary text-sm" href="#contact">
+            Hire me
+          </a>
+        </nav>
+      </header>
+      {/* Hero */}
+      <section id="home" className="section-y container-px mx-auto mt-10">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p className="text-brand font-semibold">Hello, I&apos;m</p>
+            <h1 className="mt-2 text-4xl md:text-5xl font-extrabold leading-tight">
+              Kanes Kaewchui
+            </h1>
+            <p className="mt-3 text-lg text-[var(--muted)]">
+              Full-Stack Developer • UX/UI Designer
+            </p>
+            <p className="mt-4 text-[var(--muted)] max-w-prose">
+              I build clean, accessible interfaces with a focus on business
+              goals and delightful user experience.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a className="btn-primary" href="#projects">
+                View Projects
+              </a>
+              <a
+                className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-white/15 hover:bg-white/5 transition"
+                href="/my-portfolio/public/cv.pdf"
+                download="cv.pdf">
+                Download CV
+              </a>
+            </div>
+          </div>
+          {/* <div className="relative h-[280px] md:h-[360px] w-full">
+            <Image
+              src=""
+              alt="Profile"
+              fill
+              className="object-cover rounded-2xl border border-white/10"
+            />
+          </div> */}
+        </div>
+      </section>
+      {/* About */}
+      <section id="about" className="section-y container-px mx-auto">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2 card p-6">
+            <h2 className="text-2xl font-bold">About</h2>
+            <p className="mt-3 text-[var(--muted)]">
+              I merge creativity with technical expertise as a full stack
+              developer, with a strong focus on frontend development. Leveraging
+              my background in multimedia and graphic design, I specialize in
+              crafting interactive, responsive, and user-centric web
+              experiences. I have hands-on experience working on CRM systems and
+              web information platforms, utilizing modern frameworks and
+              technologies. I&apos;m also capable of handling backend
+              development, ensuring full-cycle delivery from UI to server-side
+              logic. Eager to contribute to innovative digital solutions, I
+              continuously seek to grow and stay updated with emerging
+              technologies
+            </p>
+          </div>
+          <div className="card p-6">
+            <h3 className="font-semibold">Contact</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>
+                Email:{" "}
+                <a
+                  className="link-underline"
+                  href="mailto:kaneskaewchui1@gmail.com">
+                  kaneskaewchui1@gmail.com
+                </a>
+              </li>
+              <li>
+                GitHub:{" "}
+                <a
+                  className="link-underline"
+                  href="https://github.com/KanesKaewchui"
+                  target="_blank">
+                  KanesKaewchui
+                </a>
+              </li>
+              <li>
+                LinkedIn:{" "}
+                <a
+                  className="link-underline"
+                  href="https://www.linkedin.com/in/kanes-kaewchui-131851235/"
+                  target="_blank">
+                  Kanes Kaewchui
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      {/* Skills */}
+      <section id="skills" className="section-y container-px mx-auto">
+        <h2 className="text-2xl font-bold">Skills</h2>
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {[
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind",
+            "UX/UI",
+            "Node.js",
+            "postgreSQL",
+            "MySQL",
+            "PHP",
+            "Figma",
+            "Git",
+          ].map((s) => (
+            <li
+              key={s}
+              className="text-sm px-3 py-1 rounded-full bg-white/10 border border-white/10">
+              {s}
+            </li>
+          ))}
+        </ul>
+      </section>
+      {/* Projects */}
+      <section id="projects" className="section-y container-px mx-auto">
+        <div className="flex items-end justify-between gap-3">
+          <h2 className="text-2xl font-bold">Projects</h2>
+          <Link
+            className="text-sm link-underline"
+            href="hhttps://github.com/KanesKaewchui?tab=repositories"
+            target="_blank">
+            All Repos →
+          </Link>
+        </div>
+        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p) => (
+            <ProjectCard key={p.title} {...p} />
+          ))}
+        </div>
+      </section>
+      {/* Contact CTA */}
+      <section id="contact" className="section-y container-px mx-auto md:mt-8">
+        <div className="card p-6 md:p-10 text-center">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            Let&apos;s work together
+          </h2>
+          <p className="mt-3 text-[var(--muted)]">
+            Got a project or an idea? I’d love to hear about it.
+          </p>
+          <a className="mt-5 btn-primary" href="mailto:you@example.com">
+            Say Hello
+          </a>
+        </div>
+      </section>
+      {/* Footer */}
+      <footer className="py-8 border-t border-white/10">
+        <div className="container-px mx-auto flex items-center justify-between text-sm text-[var(--muted)]">
+          <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+          <p>Built with Next.js & Tailwind</p>
+        </div>
+      </footer>
+    </main>
   );
 }
