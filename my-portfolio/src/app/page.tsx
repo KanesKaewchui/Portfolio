@@ -60,9 +60,9 @@ export default function Home() {
               </a>
               <a
                 className="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold border border-white/15 hover:bg-white/5 transition"
-                href="/my-portfolio/public/cv.pdf"
-                download="cv.pdf">
-                Download CV
+                href="https://drive.google.com/file/d/1-soLEUUyV10DZIimOpCZrBLXH9RceKpr/view?usp=sharing"
+                target="_blank">
+                View CV
               </a>
             </div>
           </div>
