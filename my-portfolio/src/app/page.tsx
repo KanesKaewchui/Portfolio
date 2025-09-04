@@ -66,12 +66,14 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="relative h-[280px] md:h-[360px] w-full">
+          <div className="relative aspect-square w-full max-w-[360px] mx-auto mb-6 overflow-hidden rounded-2xl border border-white/10 shadow-xl bg-gradient-to-b from-white/5 to-transparent">
             <Image
-              src="/profile.jpg"
-              alt="Profile"
+              src="/profile.svg"
+              alt="Kanes Kaewchui — Profile"
               fill
-              className="object-cover rounded-2xl border border-white/10"
+              priority
+              sizes="(max-width: 768px) 90vw, 360px"
+              className="object-contain"
             />
           </div>
         </div>
@@ -130,7 +132,7 @@ export default function Home() {
       </section>
       {/* Skills */}
       <section id="skills" className="section-y container-px mx-auto">
-        <h2 className="text-2xl font-bold">Skills</h2>
+        <h2 className="text-2xl font-bold mt-4">Skills</h2>
         <ul className="mt-4 flex flex-wrap gap-2">
           {[
             "Next.js",
@@ -155,7 +157,7 @@ export default function Home() {
       </section>
       {/* Projects */}
       <section id="projects" className="section-y container-px mx-auto">
-        <div className="flex items-end justify-between gap-3">
+        <div className="flex items-end justify-between gap-3 mt-4">
           <h2 className="text-2xl font-bold">Projects</h2>
           <Link
             className="text-sm link-underline"
@@ -172,20 +174,22 @@ export default function Home() {
       </section>
       {/* Contact CTA */}
       <section id="contact" className="section-y container-px mx-auto md:mt-8">
-        <div className="card p-6 md:p-10 text-center">
+        <div className="card p-6 md:p-10 text-center mt-4">
           <h2 className="text-2xl md:text-3xl font-bold">
             Let&apos;s work together
           </h2>
           <p className="mt-3 text-[var(--muted)]">
             Got a project or an idea? I’d love to hear about it.
           </p>
-          <a className="mt-5 btn-primary" href="mailto:you@example.com">
+          <a
+            className="mt-5 btn-primary"
+            href="mailto:kaneskaewchui1@gmail.com">
             Say Hello
           </a>
         </div>
       </section>
       {/* Footer */}
-      <footer className="py-8 border-t border-white/10">
+      <footer className="py-8 border-t border-white/10 mt-4">
         <div className="container-px mx-auto flex items-center justify-between text-sm text-[var(--muted)]">
           <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
           <p>Built with Next.js & Tailwind</p>
