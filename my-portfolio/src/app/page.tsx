@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "./data/projects";
 import ProjectCard from "./components/ProjectCard";
@@ -66,14 +66,14 @@ export default function Home() {
               </a>
             </div>
           </div>
-          {/* <div className="relative h-[280px] md:h-[360px] w-full">
+          <div className="relative h-[280px] md:h-[360px] w-full">
             <Image
-              src=""
+              src="/profile.jpg"
               alt="Profile"
               fill
               className="object-cover rounded-2xl border border-white/10"
             />
-          </div> */}
+          </div>
         </div>
       </section>
       {/* About */}
