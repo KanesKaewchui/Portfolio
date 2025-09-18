@@ -1,10 +1,11 @@
 export const projects = [
 {
 title: "PROMPT DESIGN",
-description: "Web information (uat)",
+description: "Web information",
 image: "/promptdesign.svg",
 tags: ["Next.js", "Tailwind", "Stripe"],
 href: "https://prompt-uat.code-play.net/en",
+prototype: "https://www.figma.com/proto/LQeX8KnK09w36DedR4zRCV/PROMPT-DESIGN?node-id=1-565&p=f&t=2igr7Z4VLMl0ymwZ-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A565",
 },
 {
 title: "Line CRM ACDelco",
@@ -40,5 +41,6 @@ description: "Portfolio UX/UI",
 image: "/Buffet.svg",
 tags: ["UX/UI", "Figma"],
 href: "https://www.behance.net/gallery/151281615/Portfolio-UXUI",
+prototype: "https://www.figma.com/proto/FqmKOfFnqA2tdzsmwICihk/Project-Buffet-Anytime-Anywhere?node-id=28-129&p=f&t=sOjqoGENpJzUVxfR-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=8%3A47&show-proto-sidebar=1",
 },
 ] as const;
