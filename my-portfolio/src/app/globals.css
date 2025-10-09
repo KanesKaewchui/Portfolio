@@ -92,4 +92,15 @@ color: var(--fg);
   text-decoration-color: var(--brand, #2563eb); /* hover:decoration-brand */
 }
 
+.page-overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu-open .page-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
 

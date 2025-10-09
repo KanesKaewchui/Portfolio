@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 
 type Props = {
   title: string;
   description: string;
   image: string;
-  tags?: ReadonlyArray<string>; // ← เดิมเป็น string[]
+  tags?: ReadonlyArray<string>;
   href?: string;
   prototype?: string;
 };
@@ -18,62 +18,95 @@ export default function ProjectCard({
   href,
   prototype,
 }: Props) {
+  const mainUrl = href ?? prototype ?? "#";
+  const isExternal = /^https?:\/\//i.test(mainUrl);
+  const isSvg = image?.toLowerCase().endsWith(".svg");
+
+  const extAttrs = isExternal
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {};
+
   return (
-    <article className="card overflow-hidden group">
-      <div className="relative h-48 w-full">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          className="object-cover transition-transform duration-300 group-hover:scale-105"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={false}
-        />
-      </div>
+    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      {mainUrl && mainUrl !== "#" ? (
+        <a href={mainUrl} {...extAttrs} aria-label={title}>
+          <div className="relative w-full overflow-hidden rounded-t-lg aspect-[16/9]">
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              priority={false}
+            />
+          </div>
+        </a>
+      ) : (
+        <div className="relative w-full overflow-hidden rounded-t-lg aspect-[4/3]">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className={isSvg ? "object-contain p-4" : "object-cover"}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={false}
+          />
+        </div>
+      )}
 
       <div className="p-5">
-        <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
-          <h3 className="text-base sm:text-lg font-semibold min-w-0">
-            <span className="block truncate">{title}</span>
+        {mainUrl && mainUrl !== "#" ? (
+          <a href={mainUrl} {...extAttrs}>
+            <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              {title}
+            </h3>
+          </a>
+        ) : (
+          <h3 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {title}
           </h3>
+        )}
 
-          <div className="flex flex-wrap items-center gap-2 sm:gap-3 mt-1 sm:mt-0">
-            {href && (
-              <Link
-                className="text-xs sm:text-sm link-underline sm:no-underline sm:rounded-lg sm:px-3 sm:py-1.5 sm:border sm:border-white/15 sm:hover:bg-white/5 transition"
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer">
-                Visit
-              </Link>
-            )}
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {description}
+        </p>
 
-            {prototype && (
-              <Link
-                className="text-xs sm:text-sm link-underline sm:no-underline sm:rounded-lg sm:px-3 sm:py-1.5 sm:border sm:border-white/15 sm:hover:bg-white/5 transition"
-                href={prototype}
-                target="_blank"
-                rel="noopener noreferrer">
-                Prototype
-              </Link>
-            )}
-          </div>
-        </header>
+        <div className="flex flex-wrap gap-2">
+          {href && (
+            <a
+              href={href}
+              {...(href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Visit
+            </a>
+          )}
 
-        <p className="mt-2 text-sm text-[var(--muted)]">{description}</p>
+          {prototype && (
+            <a
+              href={prototype}
+              {...(prototype.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-transparent rounded-lg border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
+              Prototype
+            </a>
+          )}
+        </div>
 
         {tags.length > 0 && (
-          <ul className="mt-4 flex flex-wrap gap-2">
+          <ul className="mt-3 flex flex-wrap gap-2">
             {tags.map((t) => (
               <li
                 key={t}
-                className="text-xs px-2 py-1 rounded-full bg-white/10 border border-white/10">
+                className="text-xs px-2 py-1 rounded-full bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 text-gray-700 dark:text-gray-300">
                 {t}
               </li>
             ))}
           </ul>
         )}
       </div>
-    </article>
+    </div>
   );
 }
