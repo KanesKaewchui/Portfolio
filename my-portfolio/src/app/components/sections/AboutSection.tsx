@@ -62,16 +62,18 @@ export default function AboutSection() {
         <h2 className="text-2xl md:text-3xl font-bold">About</h2>
         <div className="mt-3 text-[var(--muted)] leading-relaxed md:text-base">
           <p>
-            I merge creativity with technical expertise as a full stack
-            developer, with a strong focus on frontend development. Leveraging
-            my background in multimedia and graphic design, I specialize in
-            crafting interactive, responsive, and user-centric web experiences.
-            I have hands-on experience working on CRM systems and web
-            information platforms, utilizing modern frameworks and technologies.
-            I&apos;m also capable of handling backend development, ensuring
-            full-cycle delivery from UI to server-side logic. Eager to
-            contribute to innovative digital solutions, I continuously seek to
-            grow and stay updated with emerging technologies
+            I’m a UX/UI Designer with a front-end background who blends
+            creativity with technical rigor. I translate requirements into user
+            flows, wireframes, and interactive Figma prototypes, iterate through
+            usability feedback, and hand off dev-ready specs (components,
+            tokens, states). With roots in multimedia and graphic design, I
+            craft accessible, responsive interfaces and maintain coherent design
+            systems. I’ve worked on CRM platforms and data-heavy web
+            applications, partnering with product and engineering to simplify
+            complex workflows and improve task success. My technical fluency in
+            HTML/CSS/JS (Next.js/Tailwind) helps align design with constraints
+            and ensure smooth implementation. I’m driven by measurable outcomes
+            and continuously refine my craft.
           </p>
         </div>
       </div>

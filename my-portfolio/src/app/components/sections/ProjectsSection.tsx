@@ -20,7 +20,6 @@ export default function ProjectsSection({ projects }: Props) {
         <h2 className="text-2xl font-bold">Projects</h2>
       </div>
 
-      {/* ลด gap เล็กน้อย + เพิ่มคอลัมน์ตอนจอใหญ่ */}
       <div className="mt-5 grid gap-4 md:gap-5 lg:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-stretch">
         {projects.map((p) => (
           <div key={p.title} className="h-full">
