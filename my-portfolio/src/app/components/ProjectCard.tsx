@@ -7,7 +7,7 @@ type Props = {
   image: string;
   tags?: ReadonlyArray<string>;
   href?: string;
-  prototype?: string;
+  Web?: string;
 };
 
 export default function ProjectCard({
@@ -16,9 +16,9 @@ export default function ProjectCard({
   image,
   tags = [],
   href,
-  prototype,
+  Web,
 }: Props) {
-  const mainUrl = href ?? prototype ?? "#";
+  const mainUrl = href ?? Web ?? "#";
   const isExternal = /^https?:\/\//i.test(mainUrl);
   const isSvg = image?.toLowerCase().endsWith(".svg");
 
@@ -79,18 +79,18 @@ export default function ProjectCard({
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
               className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Visit
+              Web
             </a>
           )}
 
-          {prototype && (
+          {Web && (
             <a
-              href={prototype}
-              {...(prototype.startsWith("http")
+              href={Web}
+              {...(Web.startsWith("http")
                 ? { target: "_blank", rel: "noopener noreferrer" }
                 : {})}
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-transparent rounded-lg border border-gray-300 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-100 dark:border-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-700">
-              Prototype
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Phone
             </a>
           )}
         </div>
