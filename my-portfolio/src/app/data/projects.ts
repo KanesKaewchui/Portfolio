@@ -39,8 +39,8 @@ secondary:"https://www.figma.com/proto/F7V3iduaHQ8ew1sQCOWdrX/Hardwarehouse?node
 // href: "https://example.com",
 // },
 {
-title: "FARM MAE JARD",
-description: "Line CRM , Web information",
+title: "FARM MAE JARD", 
+description: "Web information",
 image: "/FARMMAEJARD.svg",
 tags: ["Figma"],
 secondary: "https://www.figma.com/proto/lMXPjSmSPGafZ7c9dxaGSQ/Mae-Jard-Farm?node-id=7-58&p=f&t=ZZDOyn1uKh8lRXkL-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=7%3A58&show-proto-sidebar=1",
