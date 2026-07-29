@@ -1,37 +1,21 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import HomeSection from "./components/sections/HomeSection";
-import AboutSection from "./components/sections/AboutSection";
-import ContactSection from "./components/sections/ContactSection";
-import SkillsSection from "./components/sections/SkillsSection";
-import ProjectsSection from "./components/sections/ProjectsSection";
-import { projects } from "./data/projects";
+import AboutSection from "@/components/sections/AboutSection";
+import ContactSection from "@/components/sections/ContactSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import HeroSection from "@/components/sections/HeroSection";
+import ProcessSection from "@/components/sections/ProcessSection";
+import SkillsSection from "@/components/sections/SkillsSection";
+import WorkSection from "@/components/sections/WorkSection";
 
 export default function Home() {
-  const skills = [
-    "Next.js",
-    "React",
-    "TypeScript",
-    "Tailwind",
-    "UX/UI",
-    "Node.js",
-    "postgreSQL",
-    "MySQL",
-    "PHP",
-    "Figma",
-    "Git",
-  ] as const;
-
   return (
-    <main>
-      <div className="page-overlay md:hidden fixed inset-0 z-40 bg-black/80 transition-opacity"></div>
-      <Header />
-      <HomeSection />
+    <main id="main-content">
+      <HeroSection />
+      <WorkSection />
       <AboutSection />
-      <SkillsSection skills={skills} />
-      <ProjectsSection projects={projects} />
+      <ProcessSection />
+      <ExperienceSection />
+      <SkillsSection />
       <ContactSection />
-      <Footer />
     </main>
   );
 }
