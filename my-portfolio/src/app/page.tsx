@@ -1,21 +1,44 @@
-import AboutSection from "@/components/sections/AboutSection";
-import ContactSection from "@/components/sections/ContactSection";
-import ExperienceSection from "@/components/sections/ExperienceSection";
-import HeroSection from "@/components/sections/HeroSection";
-import ProcessSection from "@/components/sections/ProcessSection";
-import SkillsSection from "@/components/sections/SkillsSection";
-import WorkSection from "@/components/sections/WorkSection";
+/* =========================================================
+   LAYOUT
+========================================================= */
 
-export default function Home() {
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+
+/* =========================================================
+   HOME SECTIONS
+========================================================= */
+
+import HeroSection from "@/components/home/HeroSection";
+import SelectedWorkSection from "@/components/home/SelectedWorkSection";
+import AboutSection from "@/components/home/AboutSection";
+import ExperienceSection from "@/components/home/ExperienceSection";
+import CertificationsSection from "@/components/home/CertificationsSection";
+import CapabilitiesSection from "@/components/home/CapabilitiesSection";
+import MoreWorkSection from "@/components/home/MoreWorkSection";
+import ContactSection from "@/components/home/ContactSection";
+
+/* =========================================================
+   HOME PAGE
+========================================================= */
+
+export default function HomePage() {
   return (
-    <main id="main-content">
-      <HeroSection />
-      <WorkSection />
-      <AboutSection />
-      <ProcessSection />
-      <ExperienceSection />
-      <SkillsSection />
-      <ContactSection />
-    </main>
+    <>
+      <Header />
+
+      <main>
+        <HeroSection />
+        <SelectedWorkSection />
+        <AboutSection />
+        <ExperienceSection />
+        <CertificationsSection />
+        <CapabilitiesSection />
+        <MoreWorkSection />
+        <ContactSection />
+      </main>
+
+      <Footer />
+    </>
   );
 }

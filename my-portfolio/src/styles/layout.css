@@ -1,0 +1,727 @@
+/* =========================================================
+   01. HEADER
+========================================================= */
+
+/* ---------------------------------------------------------
+   HEADER WRAPPER
+--------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+
+  z-index: 50;
+
+  background: var(--header-bg);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* ---------------------------------------------------------
+   HEADER INNER
+--------------------------------------------------------- */
+
+.header-inner {
+  min-height: 82px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(180px, 1fr)
+    auto
+    minmax(180px, 1fr);
+
+  align-items: center;
+
+  gap: 32px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  width: fit-content;
+
+  color: var(--foreground);
+
+  font-size: 24px;
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+
+  text-decoration: none;
+
+  transition: opacity 180ms ease;
+}
+
+.brand:hover {
+  opacity: 0.72;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.desktop-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+}
+
+.desktop-nav a,
+.resume-link {
+  position: relative;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  font-weight: 650;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+/* ---------------------------------------------------------
+   NAV UNDERLINE
+--------------------------------------------------------- */
+
+.desktop-nav a::after,
+.resume-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 100%;
+  height: 1px;
+
+  background: var(--foreground);
+
+  transform: scaleX(0);
+
+  transform-origin: left center;
+
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.desktop-nav a:hover,
+.resume-link:hover {
+  color: var(--foreground);
+}
+
+.desktop-nav a:hover::after,
+.resume-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+/* =========================================================
+   LANGUAGE TOGGLE
+========================================================= */
+
+.lang-toggle {
+  display: flex;
+
+  padding: 4px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  background: var(--surface);
+}
+
+.lang-toggle button {
+  min-width: 38px;
+
+  padding: 7px 11px;
+
+  border: 0;
+
+  border-radius: 999px;
+
+  background: transparent;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.lang-toggle button:hover {
+  color: var(--foreground);
+}
+
+.lang-toggle button:active {
+  transform: scale(0.96);
+}
+
+.lang-toggle .is-active {
+  color: #ffffff;
+
+  background: var(--primary);
+}
+
+/* =========================================================
+   THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+  width: 42px;
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  background: var(--surface);
+
+  color: var(--foreground);
+
+  cursor: pointer;
+
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--surface-hover);
+
+  border-color: color-mix(in srgb, var(--foreground) 20%, var(--border));
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ---------------------------------------------------------
+   KEYBOARD FOCUS
+--------------------------------------------------------- */
+
+.lang-toggle button:focus-visible,
+.theme-toggle:focus-visible,
+.desktop-nav a:focus-visible,
+.resume-link:focus-visible {
+  outline: 2px solid var(--interactive);
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-menu-button,
+.mobile-nav {
+  display: none;
+}
+
+/* =========================================================
+   02. FOOTER
+========================================================= */
+
+/* ---------------------------------------------------------
+   FOOTER WRAPPER
+--------------------------------------------------------- */
+
+.site-footer {
+  position: relative;
+
+  width: 100%;
+
+  color: #ffffff;
+
+  background: #111418;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------------------------------------------------
+   FOOTER INNER
+--------------------------------------------------------- */
+
+.footer-inner {
+  padding-top: 52px;
+  padding-bottom: 28px;
+}
+
+/* =========================================================
+   FOOTER MAIN GRID
+========================================================= */
+
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1fr)
+    minmax(220px, 0.85fr)
+    auto;
+
+  column-gap: 72px;
+
+  align-items: start;
+}
+
+/* =========================================================
+   IDENTITY
+========================================================= */
+
+.footer-identity {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.footer-name {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 650;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.015em;
+}
+
+.footer-role {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PORTFOLIO META
+========================================================= */
+
+.footer-meta {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.footer-meta-title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+.footer-meta-copy {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.58);
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+.footer-back-top {
+  width: 104px;
+  height: 104px;
+
+  justify-self: end;
+
+  display: inline-flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 11px;
+
+  padding: 0;
+
+  color: #ffffff;
+
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.34);
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 220ms ease,
+    background-color 220ms ease;
+}
+
+/* ---------------------------------------------------------
+   BACK TO TOP ICON
+--------------------------------------------------------- */
+
+.footer-back-top-icon {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 27px;
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------------------------------------------------------
+   BACK TO TOP LABEL
+--------------------------------------------------------- */
+
+.footer-back-top-label {
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  line-height: 1.2;
+}
+
+/* ---------------------------------------------------------
+   BACK TO TOP HOVER
+--------------------------------------------------------- */
+
+.footer-back-top:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(255, 255, 255, 0.82);
+
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.footer-back-top:hover .footer-back-top-icon {
+  transform: translateY(-3px);
+}
+
+/* ---------------------------------------------------------
+   BACK TO TOP FOCUS
+--------------------------------------------------------- */
+
+.footer-back-top:focus-visible {
+  outline: 2px solid #bbe1fa;
+
+  outline-offset: 6px;
+}
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  margin-top: 44px;
+
+  padding-top: 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  letter-spacing: 0.02em;
+}
+
+/* =========================================================
+   FOOTER — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .footer-inner {
+    padding-top: 46px;
+  }
+
+  .footer-grid {
+    grid-template-columns:
+      1fr
+      1fr
+      auto;
+
+    column-gap: 44px;
+  }
+
+  .footer-back-top {
+    width: 94px;
+    height: 94px;
+  }
+
+  .footer-bottom {
+    margin-top: 38px;
+  }
+}
+
+/* =========================================================
+   FOOTER — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .footer-inner {
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns:
+      1fr
+      auto;
+
+    column-gap: 24px;
+
+    row-gap: 32px;
+  }
+
+  /* Identity */
+
+  .footer-identity {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* Portfolio */
+
+  .footer-meta {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Back to top */
+
+  .footer-back-top {
+    grid-column: 2;
+
+    grid-row: 1 / span 2;
+
+    align-self: center;
+
+    width: 86px;
+    height: 86px;
+  }
+
+  .footer-back-top-icon {
+    font-size: 23px;
+  }
+
+  .footer-back-top-label {
+    font-size: 9px;
+  }
+
+  /* Bottom */
+
+  .footer-bottom {
+    margin-top: 34px;
+
+    padding-top: 18px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 6px;
+  }
+}
+
+/* =========================================================
+   FOOTER — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-back-top,
+  .footer-back-top-icon {
+    transition: none;
+  }
+
+  .footer-back-top:hover,
+  .footer-back-top:hover .footer-back-top-icon {
+    transform: none;
+  }
+}
+
+/* =========================================================
+   04. MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  /* -------------------------------------------------------
+     HEADER
+  ------------------------------------------------------- */
+
+  .header-inner {
+    min-height: 70px;
+
+    grid-template-columns:
+      1fr
+      auto;
+  }
+
+  .brand {
+    font-size: 21px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .lang-toggle {
+    display: none;
+  }
+
+  .theme-toggle {
+    width: 38px;
+    height: 36px;
+  }
+
+  /* -------------------------------------------------------
+     FOOTER
+  ------------------------------------------------------- */
+
+  .footer-row {
+    min-height: auto;
+
+    padding: 40px 0 30px;
+
+    grid-template-columns:
+      1fr
+      auto;
+
+    column-gap: 28px;
+    row-gap: 34px;
+  }
+
+  /*
+    Group แรก:
+    Name / Role
+  */
+
+  .footer-row > div:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /*
+    Group ที่สอง:
+    Portfolio / Tech
+  */
+
+  .footer-row > div:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  /* Back to top */
+
+  .back-to-top {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    width: 86px;
+    height: 86px;
+  }
+
+  .back-to-top {
+    font-size: 23px;
+  }
+
+  .back-to-top span {
+    font-size: 9px;
+  }
+}
+
+/* =========================================================
+   05. REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .brand,
+  .desktop-nav a,
+  .resume-link,
+  .lang-toggle button,
+  .theme-toggle,
+  .back-to-top {
+    transition: none;
+  }
+
+  .desktop-nav a::after,
+  .resume-link::after {
+    transition: none;
+  }
+
+  .back-to-top:hover {
+    transform: none;
+  }
+}

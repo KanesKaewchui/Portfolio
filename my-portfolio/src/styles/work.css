@@ -1,0 +1,726 @@
+/* =========================================================
+   01. CASE STUDY — HERO
+========================================================= */
+
+.case-hero {
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+
+.case-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 54px;
+
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.case-back-link > span:first-child {
+  transition: transform 180ms ease-out;
+}
+
+.case-back-link:hover,
+.case-back-link:focus-visible {
+  color: var(--foreground);
+}
+
+.case-back-link:hover > span:first-child,
+.case-back-link:focus-visible > span:first-child {
+  transform: translateX(-4px);
+}
+
+.case-back-link:focus-visible {
+  outline: 2px solid var(--interactive);
+  outline-offset: 8px;
+  border-radius: 4px;
+}
+
+.case-hero h1 {
+  margin: 62px 0 0;
+
+  font-size: clamp(62px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.case-hero h2 {
+  max-width: 900px;
+  margin: 30px 0 0;
+
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.case-hero > p {
+  max-width: 800px;
+  margin: 36px 0 0;
+
+  color: var(--body-copy);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   02. CASE STUDY — META
+========================================================= */
+
+.case-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+
+  margin-top: 62px;
+}
+
+.case-meta > div {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.case-meta span {
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.case-meta b {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   03. CASE STUDY — HERO COVER
+========================================================= */
+
+.case-cover {
+  position: relative;
+
+  width: 100%;
+  min-height: 580px;
+  margin-top: 78px;
+
+  overflow: hidden;
+  border-radius: 28px;
+
+  display: grid;
+  place-items: center;
+
+  text-align: center;
+  color: #1b262c;
+  font-weight: 700;
+}
+
+.case-cover--fixflow {
+  background: linear-gradient(135deg, #bbe1fa, #deeffa);
+}
+
+.case-cover--hardware {
+  background: #f6c744;
+}
+
+.case-cover--kachen {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1850bf, #3282b8);
+}
+
+.case-cover--green {
+  background: #eaf5ea;
+}
+
+.case-cover--risk {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1b262c 0%, #30475e 100%);
+}
+
+.case-cover--neutral {
+  background: #eeeae2;
+}
+
+.case-cover-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-height: 580px;
+
+  object-fit: cover;
+}
+
+/* =========================================================
+   04. CASE STUDY — CONTENT / SECTION BASE
+========================================================= */
+
+.case-content {
+  padding-bottom: 140px;
+}
+
+.case-section {
+  padding-block: 110px;
+  border-top: 1px solid var(--border);
+}
+
+.case-section > h2 {
+  max-width: 1000px;
+  margin: 52px 0 0;
+
+  font-size: clamp(42px, 4.2vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================================
+   05. OVERVIEW — PROBLEM / GOAL
+========================================================= */
+
+.case-two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.75fr);
+  gap: 90px;
+
+  align-items: start;
+  margin-top: 62px;
+}
+
+.case-two-col h2 {
+  margin: 0;
+
+  font-size: 44px;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.case-two-col p,
+.case-callout p {
+  color: var(--body-copy);
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.case-two-col > div > p {
+  max-width: 760px;
+  margin-top: 28px;
+}
+
+.case-callout {
+  padding: 32px;
+
+  border: 1px solid var(--border);
+  border-radius: 22px;
+
+  background: var(--surface);
+}
+
+.case-callout span,
+.research-integrity b {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.case-callout p {
+  margin: 22px 0 0;
+}
+
+/* =========================================================
+   06. DESIGN INPUTS / RESEARCH
+========================================================= */
+
+.case-research-grid {
+  display: grid;
+
+  /*
+    ใช้ 6 columns เพื่อแบ่งเป็น:
+
+    ROW 1
+    ┌──────┬──────┬──────┐
+    │  01  │  02  │  03  │
+    └──────┴──────┴──────┘
+
+    ROW 2
+        ┌──────┬──────┐
+        │  04  │  05  │
+        └──────┴──────┘
+  */
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  gap: 22px;
+
+  margin-top: 56px;
+}
+
+/* =========================================================
+/* =========================================================
+   RESEARCH CARD
+========================================================= */
+
+.case-research-grid article {
+  grid-column: span 2;
+
+  min-height: 160px;
+
+  padding: 28px 30px;
+
+  border: 1px solid var(--border);
+  border-radius: 20px;
+
+  background: var(--surface);
+
+  /* Number + Title อยู่แถวเดียวกัน */
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+
+  gap: 18px;
+
+  align-items: center;
+}
+
+/* =========================================================
+   ROW 2 — CENTER
+========================================================= */
+
+.case-research-grid article:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.case-research-grid article:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.case-research-grid span {
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+
+  /* ให้อยู่ระดับเดียวกับข้อความ */
+  align-self: center;
+}
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.case-research-grid h3 {
+  margin: 0;
+  padding: 0;
+
+  max-width: 340px;
+
+  font-size: 19px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.015em;
+}
+
+/* =========================================================
+   RESEARCH INTEGRITY
+========================================================= */
+
+.research-integrity {
+  margin-top: 34px;
+
+  padding: 28px;
+
+  border-radius: 18px;
+
+  background: color-mix(in srgb, var(--highlight) 48%, var(--surface));
+}
+
+.research-integrity p {
+  max-width: 900px;
+
+  margin: 18px 0 0;
+
+  color: var(--body-copy);
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   07. DESIGN DECISIONS
+========================================================= */
+
+.decision-list {
+  margin-top: 54px;
+  border-top: 1px solid var(--border);
+}
+
+.decision-list article {
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 20px;
+
+  padding-block: 38px;
+  border-bottom: 1px solid var(--border);
+}
+
+.decision-list article > span {
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.decision-list h3 {
+  margin: 0;
+
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.decision-list p {
+  max-width: 720px;
+  margin: 18px 0 0;
+
+  color: var(--body-copy);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   08. SOLUTION — DESIGN PROCESS SHOWCASE
+========================================================= */
+
+.design-process {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 72px;
+}
+
+/* Default: Text left / Image right */
+.process-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.32fr);
+  gap: 72px;
+
+  align-items: center;
+  padding-block: 90px;
+
+  border-top: 1px solid var(--border);
+}
+
+/* Image left / Text right */
+.process-showcase--image-left {
+  grid-template-columns: minmax(0, 1.32fr) minmax(0, 0.68fr);
+}
+
+.process-showcase--image-left .process-showcase-copy {
+  order: 2;
+}
+
+.process-showcase--image-left .process-showcase-visual {
+  order: 1;
+}
+
+/* Full width — เหมาะกับ Final UI */
+.process-showcase--full {
+  grid-template-columns: 1fr;
+  gap: 42px;
+}
+
+.process-showcase--full .process-showcase-copy {
+  max-width: 760px;
+}
+
+.process-showcase--full .process-showcase-visual {
+  width: 100%;
+}
+
+/* Process text */
+.process-showcase-copy {
+  min-width: 0;
+}
+
+.process-showcase-number {
+  color: var(--muted);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.process-showcase-copy h3 {
+  max-width: 520px;
+  margin: 28px 0 0;
+
+  font-size: clamp(32px, 3vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.process-showcase-copy p {
+  max-width: 480px;
+  margin: 30px 0 0;
+
+  color: var(--body-copy);
+
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+/* Process image */
+.process-showcase-visual {
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 24px;
+
+  background: var(--surface);
+}
+
+.process-showcase-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================================================
+   09. REFLECTION
+========================================================= */
+
+.case-section:last-child .case-callout {
+  max-width: 980px;
+  margin-top: 52px;
+}
+
+/* =========================================================
+   10. RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+  .case-hero {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .case-hero h1 {
+    font-size: clamp(56px, 8vw, 82px);
+  }
+
+  .case-meta {
+    gap: 22px;
+  }
+
+  .case-section {
+    padding-block: 90px;
+  }
+
+  .case-two-col {
+    gap: 56px;
+  }
+
+  /* Research cards: 2 columns on tablet */
+  .case-research-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /*
+    Reset the custom desktop placement for cards 04–05.
+    Tablet flows naturally as 01–02 / 03–04 / 05.
+  */
+  .case-research-grid article,
+  .case-research-grid article:nth-child(4),
+  .case-research-grid article:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .process-showcase,
+  .process-showcase--image-left {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 48px;
+
+    padding-block: 72px;
+  }
+
+  .process-showcase--image-left {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  }
+
+  .process-showcase--full {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   11. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .case-hero {
+    padding-top: 78px;
+    padding-bottom: 78px;
+  }
+
+  .case-back-link {
+    margin-bottom: 40px;
+  }
+
+  .case-hero h1 {
+    margin-top: 44px;
+
+    font-size: clamp(48px, 15vw, 68px);
+    line-height: 0.98;
+    letter-spacing: -0.05em;
+  }
+
+  .case-hero h2 {
+    margin-top: 24px;
+
+    font-size: 24px;
+    line-height: 1.35;
+  }
+
+  .case-hero > p {
+    margin-top: 28px;
+    font-size: 16px;
+  }
+
+  .case-meta {
+    grid-template-columns: 1fr;
+    gap: 24px;
+
+    margin-top: 46px;
+  }
+
+  .case-cover {
+    min-height: 360px;
+    margin-top: 56px;
+
+    border-radius: 22px;
+  }
+
+  .case-cover-image {
+    min-height: 360px;
+  }
+
+  .case-content {
+    padding-bottom: 100px;
+  }
+
+  .case-section {
+    padding-block: 72px;
+  }
+
+  .case-section > h2 {
+    margin-top: 40px;
+
+    font-size: clamp(38px, 11vw, 52px);
+  }
+
+  .case-two-col {
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    margin-top: 48px;
+  }
+
+  .case-two-col h2 {
+    font-size: 34px;
+  }
+
+  .case-callout {
+    padding: 26px;
+  }
+
+  .case-research-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+
+    margin-top: 44px;
+  }
+
+  /*
+    Mobile uses a single natural column.
+    Reset every desktop 3–2 placement rule explicitly.
+  */
+  .case-research-grid article,
+  .case-research-grid article:nth-child(4),
+  .case-research-grid article:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .case-research-grid article {
+    min-height: 150px;
+  }
+
+  .decision-list {
+    margin-top: 44px;
+  }
+
+  .decision-list article {
+    grid-template-columns: 48px minmax(0, 1fr);
+    padding-block: 30px;
+  }
+
+  .decision-list h3 {
+    font-size: 24px;
+  }
+
+  .design-process {
+    margin-top: 52px;
+  }
+
+  .process-showcase,
+  .process-showcase--image-left,
+  .process-showcase--full {
+    grid-template-columns: 1fr;
+    gap: 34px;
+
+    padding-block: 64px;
+  }
+
+  /* บนมือถือให้ข้อความมาก่อนภาพเสมอ */
+  .process-showcase--image-left .process-showcase-copy {
+    order: 1;
+  }
+
+  .process-showcase--image-left .process-showcase-visual {
+    order: 2;
+  }
+
+  .process-showcase-copy h3 {
+    margin-top: 22px;
+    font-size: 32px;
+  }
+
+  .process-showcase-copy p {
+    margin-top: 22px;
+
+    font-size: 16px;
+  }
+
+  .process-showcase-visual {
+    border-radius: 18px;
+  }
+}

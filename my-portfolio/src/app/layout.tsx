@@ -1,29 +1,36 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 
-import Footer from "@/components/layout/Footer";
-import Header from "@/components/layout/Header";
+import { PortfolioProvider } from "@/providers/PortfolioProvider";
 
 import "./globals.css";
 
+/* =========================================================
+   METADATA
+========================================================= */
+
 export const metadata: Metadata = {
-  title: "Kanes Kaewchui | UX/UI & Product Designer",
-  description:
-    "UX/UI and Product Designer with a front-end development background, focused on complex workflows and scalable digital products.",
+  title: "Kanes Kaewchui - UX/UI Designer",
+  description: "UX/UI with a Full Stack Developer background.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+/* =========================================================
+   TYPES
+========================================================= */
+
+type RootLayoutProps = Readonly<{
+  children: ReactNode;
+}>;
+
+/* =========================================================
+   ROOT LAYOUT
+========================================================= */
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Header />
-
-        {children}
-
-        <Footer />
+        <PortfolioProvider>{children}</PortfolioProvider>
       </body>
     </html>
   );
