@@ -92,17 +92,12 @@ export function PortfolioProvider({ children }: PortfolioProviderProps) {
 
     /* -------------------------------------------------------
        LANGUAGE
+       Default = EN
     ------------------------------------------------------- */
-
-    const browserLanguage: Language = navigator.language
-      .toLowerCase()
-      .startsWith("th")
-      ? "th"
-      : "en";
 
     const nextLanguage: Language = isLanguage(savedLanguage)
       ? savedLanguage
-      : browserLanguage;
+      : DEFAULT_LANGUAGE;
 
     /* -------------------------------------------------------
        UPDATE STATE
