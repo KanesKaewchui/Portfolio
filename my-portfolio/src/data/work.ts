@@ -172,8 +172,7 @@ const solarPoleProject = {
           description:
             "จัดโครงสร้างระบบโดยยึดการจัดการกล้อง ข้อมูลอุปกรณ์ และฟังก์ชันที่เกี่ยวข้องเป็นหลัก เพื่อให้เจ้าหน้าที่เข้าใจว่าข้อมูลแต่ละส่วนอยู่ตรงไหนและเข้าถึงได้ง่าย",
 
-          image:
-            "/images/work/solarpole-plus/process/information-architecture.webp",
+          image: "/images/work/solarpole-plus/information-architecture.png",
 
           layout: "image-right",
         },
@@ -184,7 +183,7 @@ const solarPoleProject = {
           description:
             "วาง Flow หลักตั้งแต่การดูรายการกล้อง เปิดดูรายละเอียด ไปจนถึงการเข้าถึงฟังก์ชันที่เกี่ยวข้องกับการจัดการกล้อง",
 
-          image: "/images/work/solarpole-plus/process/user-flow.webp",
+          image: "/images/work/solarpole-plus/user-flow.png",
 
           layout: "image-left",
         },
@@ -195,7 +194,7 @@ const solarPoleProject = {
           description:
             "ทดลองโครงสร้างของหน้าจอหลักก่อนลงรายละเอียดด้าน Visual โดยให้ความสำคัญกับลำดับข้อมูล Navigation และงานที่เกี่ยวข้องกับการจัดการกล้อง",
 
-          image: "/images/work/solarpole-plus/process/wireframes.webp",
+          image: "/images/work/solarpole-plus/wireframes.png",
 
           layout: "image-right",
         },
@@ -206,7 +205,7 @@ const solarPoleProject = {
           description:
             "นำโครงสร้างระบบและ Workflow มาพัฒนาเป็นหน้าจอหลังบ้านที่ช่วยให้การจัดการกล้องและข้อมูลของ SolarPole+ มีความชัดเจนมากขึ้น",
 
-          image: "/images/work/solarpole-plus/process/final-ui.webp",
+          image: "/images/work/solarpole-plus/final-ui.png",
 
           layout: "full",
         },
@@ -453,7 +452,7 @@ const antiHumanTraffickingProject = {
           description:
             "จัดโครงสร้างระบบตามงานหลักของเจ้าหน้าที่ โดยแยก Dashboard, Risk Map, ข้อมูลระดับพื้นที่ และข้อมูลที่เกี่ยวข้องกับการตรวจสอบออกจากกันอย่างชัดเจน เพื่อให้เข้าใจว่าข้อมูลแต่ละประเภทอยู่ตรงไหนและสามารถเข้าถึงได้ง่ายขึ้น",
 
-          image: "/images/work/anti-human/information-architecture.webp",
+          image: "/images/work/anti-human/information-architecture.png",
 
           layout: "image-right",
         },
@@ -464,7 +463,7 @@ const antiHumanTraffickingProject = {
           description:
             "วาง Flow หลักตั้งแต่การดูภาพรวมสถานการณ์ความเสี่ยง การพบพื้นที่ที่ควรให้ความสนใจ การเจาะดูข้อมูลประกอบ ไปจนถึงการนำข้อมูลเหล่านั้นมาใช้พิจารณาว่าควรตรวจสอบพื้นที่จริงเพิ่มเติมหรือไม่",
 
-          image: "/images/work/anti-human/risk-monitoring-flow.webp",
+          image: "/images/work/anti-human/risk-monitoring-flow.png",
 
           layout: "image-left",
         },
@@ -475,7 +474,7 @@ const antiHumanTraffickingProject = {
           description:
             "ทดลองโครงสร้างหน้าจอระดับ Low-fidelity สำหรับ Dashboard, Risk Map และหน้าข้อมูลที่เกี่ยวข้อง เพื่อกำหนดลำดับข้อมูล Navigation และความสัมพันธ์ระหว่างข้อมูลก่อนพัฒนาเป็น Final UI",
 
-          image: "/images/work/anti-human/wireframes.webp",
+          image: "/images/work/anti-human/wireframes.png",
 
           layout: "image-right",
         },
@@ -486,7 +485,7 @@ const antiHumanTraffickingProject = {
           description:
             "นำโครงสร้างข้อมูลและ Flow การติดตามความเสี่ยงมาพัฒนาเป็นหน้าจอสำหรับการปฏิบัติงานจริง ช่วยให้เจ้าหน้าที่ตรวจสอบระดับความเสี่ยง มองเห็นพื้นที่สำคัญ เปรียบเทียบข้อมูลตามพื้นที่ และเข้าถึงข้อมูลประกอบที่ใช้สำหรับการตรวจสอบต่อได้ง่ายขึ้น",
 
-          image: "/images/work/anti-human/final-interface.webp",
+          image: "/images/work/anti-human/final-interface.png",
 
           layout: "full",
         },
@@ -764,7 +763,7 @@ const kachenCorporateWebsiteProject = {
           description:
             "ปรับโครงสร้างเว็บไซต์ใหม่ให้แบ่งข้อมูลออกเป็น Home, About, Services, Solutions, Portfolio, Blog และ Contact อย่างชัดเจน เพื่อช่วยให้ผู้ใช้เข้าใจว่าข้อมูลแต่ละประเภทอยู่ตรงไหนและสามารถไปยังส่วนที่ต้องการได้ง่ายขึ้น",
 
-          image: "/images/work/kachen/site-architecture.webp",
+          image: "/images/work/kachen/site-architecture.png",
 
           layout: "image-right",
         },
@@ -775,7 +774,7 @@ const kachenCorporateWebsiteProject = {
           description:
             "วางโครงสร้างหน้าหลักให้รองรับเส้นทางตั้งแต่การทำความเข้าใจ Kachen สำรวจบริการและโซลูชัน ดูรายละเอียดผลิตภัณฑ์ที่สนใจ ไปจนถึงการติดต่อเมื่อผู้ใช้ต้องการข้อมูลเพิ่มเติม",
 
-          image: "/images/work/kachen/page-structure.webp",
+          image: "/images/work/kachen/page-structure.png",
 
           layout: "image-left",
         },
@@ -786,7 +785,7 @@ const kachenCorporateWebsiteProject = {
           description:
             "กำหนดรูปแบบร่วมของ Typography, Spacing, Button, Card, Section Layout และ Responsive Behavior เพื่อให้แต่ละหน้ามีความสม่ำเสมอและสามารถนำรูปแบบกลับมาใช้ซ้ำได้",
 
-          image: "/images/work/kachen/visual-system.webp",
+          image: "/images/work/kachen/visual-system.png",
 
           layout: "image-right",
         },
@@ -797,7 +796,7 @@ const kachenCorporateWebsiteProject = {
           description:
             "นำโครงสร้างข้อมูลและ Visual System มาพัฒนาเป็นหน้าจอ Responsive สำหรับเว็บไซต์จริง ครอบคลุมหน้า Home, Services, Solutions, Product, Portfolio, Blog และ Contact",
 
-          image: "/images/work/kachen/final-interface.webp",
+          image: "/images/work/kachen/final-interface.png",
 
           layout: "full",
         },
@@ -808,7 +807,7 @@ const kachenCorporateWebsiteProject = {
           description:
             "พัฒนาเว็บไซต์ใหม่ด้วย Next.js โดยใช้ Reusable Components, Responsive Layout, Shared Design Patterns และโครงสร้าง Metadata เพื่อให้เว็บไซต์สามารถดูแลและขยายต่อได้ง่ายขึ้น",
 
-          image: "/images/work/kachen/frontend-implementation.webp",
+          image: "/images/work/kachen/frontend-implementation.png",
 
           layout: "image-left",
         },

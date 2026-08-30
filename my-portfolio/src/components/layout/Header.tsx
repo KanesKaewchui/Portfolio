@@ -106,7 +106,7 @@ export default function Header() {
             onClick={toggleMenu}
             aria-expanded={open}
             aria-controls="mobile-navigation">
-            {open ? "Close" : "Menu"}
+            {open ? t.nav.close : t.nav.menu}
           </button>
         </div>
       </div>

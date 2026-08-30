@@ -1,35 +1,9 @@
 "use client";
 
+import { siteConfig } from "@/config/site";
 import { messages } from "@/i18n";
+
 import { usePortfolio } from "@/providers/PortfolioProvider";
-
-/* =========================================================
-   CONTACT DATA
-========================================================= */
-
-const EMAIL = "kaneskaewchui1@gmail.com";
-
-const SOCIAL_LINKS = [
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/kanes-kaewchui-131851235/",
-  },
-  {
-    label: "Cv",
-    href: "/documents/CV - Kanes Kaewchui.pdf",
-  },
-  {
-    label: "GitHub",
-    href: "https://github.com/KanesKaewchui",
-  },
-] as const;
-
-const FOCUS_AREAS = [
-  "UX/UI Design",
-  "Product Thinking",
-  "Design Systems",
-  "Front-end Collaboration",
-] as const;
 
 /* =========================================================
    CONTACT SECTION
@@ -40,22 +14,29 @@ export default function ContactSection() {
 
   const t = messages[language].contact;
 
+  const socialLinks = [
+    {
+      label: "LinkedIn",
+      href: siteConfig.social.linkedin,
+    },
+    {
+      label: "Cv",
+      href: siteConfig.resumePath,
+    },
+    {
+      label: "GitHub",
+      href: siteConfig.social.github,
+    },
+  ] as const;
+
   return (
     <section id="contact" className="contact-section">
-      {/* =====================================================
-          DECORATIVE BACKGROUND
-      ===================================================== */}
-
       <div className="contact-glow" aria-hidden="true" />
 
-      {/* =====================================================
-          CONTENT
-      ===================================================== */}
-
       <div className="contact-inner site-shell">
-        {/* -------------------------------------------------
+        {/* =================================================
             TOP LINE
-        ------------------------------------------------- */}
+        ================================================= */}
 
         <div className="contact-topline">
           <p>{t.eyebrow}</p>
@@ -68,15 +49,7 @@ export default function ContactSection() {
         ================================================= */}
 
         <div className="contact-grid">
-          {/* ===============================================
-              MAIN CONTENT
-          =============================================== */}
-
           <div className="contact-main">
-            {/* ---------------------------------------------
-                TITLE
-            --------------------------------------------- */}
-
             <h2
               className={[
                 "contact-title",
@@ -89,30 +62,22 @@ export default function ContactSection() {
               ))}
             </h2>
 
-            {/* ---------------------------------------------
-                ACCENT
-            --------------------------------------------- */}
-
             <div className="contact-accent" aria-hidden="true">
               <span />
               <span />
             </div>
 
-            {/* ---------------------------------------------
-                DESCRIPTION
-            --------------------------------------------- */}
-
             <p className="contact-copy">{t.description}</p>
 
-            {/* ===============================================
+            {/* =============================================
                 EMAIL
-            =============================================== */}
+            ============================================= */}
 
             <div className="contact-email">
               <span className="contact-label">{t.emailLabel}</span>
 
-              <a className="email-link" href={`mailto:${EMAIL}`}>
-                <span className="email-link-text">{EMAIL}</span>
+              <a className="email-link" href={`mailto:${siteConfig.email}`}>
+                <span className="email-link-text">{siteConfig.email}</span>
 
                 <span className="email-link-icon" aria-hidden="true">
                   ↗
@@ -120,18 +85,18 @@ export default function ContactSection() {
               </a>
             </div>
 
-            {/* ===============================================
-                SOCIAL LINKS
-            =============================================== */}
+            {/* =============================================
+                SOCIAL
+            ============================================= */}
 
             <div className="social-links">
-              {SOCIAL_LINKS.map((link) => (
+              {socialLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noreferrer">
-                  <span>{link.label}</span>
+                  {link.label}
 
                   <span aria-hidden="true">↗</span>
                 </a>
@@ -140,59 +105,34 @@ export default function ContactSection() {
           </div>
 
           {/* ===============================================
-              CONTACT META
+              META
           =============================================== */}
 
           <aside className="contact-meta">
-            {/* ---------------------------------------------
-                LOCATION
-            --------------------------------------------- */}
+            <div className="contact-meta-group">
+              <span className="contact-meta-label">{t.basedInLabel}</span>
 
-            <ContactMetaGroup label={t.basedInLabel}>
-              <p>Bangkok, Thailand</p>
-            </ContactMetaGroup>
+              <p>{t.location}</p>
+            </div>
 
-            {/* ---------------------------------------------
-                FOCUS
-            --------------------------------------------- */}
+            <div className="contact-meta-group">
+              <span className="contact-meta-label">{t.focusLabel}</span>
 
-            <ContactMetaGroup label={t.focusLabel}>
               <div className="contact-focus">
-                {FOCUS_AREAS.map((area) => (
+                {t.focusAreas.map((area) => (
                   <p key={area}>{area}</p>
                 ))}
               </div>
-            </ContactMetaGroup>
+            </div>
 
-            {/* ---------------------------------------------
-                AVAILABILITY
-            --------------------------------------------- */}
+            <div className="contact-meta-group">
+              <span className="contact-meta-label">{t.statusLabel}</span>
 
-            <ContactMetaGroup label={t.statusLabel}>
               <div className="status-pill">{t.status}</div>
-            </ContactMetaGroup>
+            </div>
           </aside>
         </div>
       </div>
     </section>
-  );
-}
-
-/* =========================================================
-   CONTACT META GROUP
-========================================================= */
-
-type ContactMetaGroupProps = {
-  label: string;
-  children: React.ReactNode;
-};
-
-function ContactMetaGroup({ label, children }: ContactMetaGroupProps) {
-  return (
-    <div className="contact-meta-group">
-      <span className="contact-meta-label">{label}</span>
-
-      {children}
-    </div>
   );
 }

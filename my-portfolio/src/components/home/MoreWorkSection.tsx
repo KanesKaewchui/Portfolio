@@ -1,14 +1,23 @@
+"use client";
+
 import Image from "next/image";
 
 import Reveal from "@/components/ui/Reveal";
 
 import { moreWork } from "@/data/home";
+import { messages, type Language } from "@/i18n";
+
+import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
    MORE WORK SECTION
 ========================================================= */
 
 export default function MoreWorkSection() {
+  const { language } = usePortfolio();
+
+  const t = messages[language].moreWork;
+
   return (
     <section id="more-work" className="section site-shell">
       {/* =====================================================
@@ -17,12 +26,12 @@ export default function MoreWorkSection() {
 
       <div className="section-heading">
         <div>
-          <p className="eyebrow">07 — MORE WORK</p>
+          <p className="eyebrow">{t.eyebrow}</p>
 
-          <h2>More Work</h2>
+          <h2>{t.title}</h2>
         </div>
 
-        <p>Smaller projects, visual experiments, and selected client work.</p>
+        <p>{t.description}</p>
       </div>
 
       {/* =====================================================
@@ -35,7 +44,7 @@ export default function MoreWorkSection() {
             key={project.title}
             className={`more-work-cell more-work-cell--${index + 1}`}>
             <Reveal delay={(index % 4) * 50}>
-              <MoreWorkItem project={project} />
+              <MoreWorkItem project={project} language={language} />
             </Reveal>
           </div>
         ))}
@@ -52,134 +61,67 @@ type MoreWorkProject = (typeof moreWork)[number];
 
 type MoreWorkItemProps = {
   project: MoreWorkProject;
+  language: Language;
 };
 
 /* =========================================================
    MORE WORK ITEM
 ========================================================= */
 
-function MoreWorkItem({ project }: MoreWorkItemProps) {
-  const { title, type, image, number, tone, href } = project;
-
+function MoreWorkItem({ project, language }: MoreWorkItemProps) {
   const className = [
     "more-work-item",
-    `tone-${tone}`,
-    href ? "more-work-item--linked" : "more-work-item--static",
+    `tone-${project.tone}`,
+    project.href ? "more-work-item--linked" : "more-work-item--static",
   ].join(" ");
 
   const content = (
     <>
-      <MoreWorkVisual
-        title={title}
-        image={image}
-        number={number}
-        hasLink={Boolean(href)}
-      />
+      <div className="more-work-visual">
+        <Image
+          src={project.image}
+          alt={`${project.title} project`}
+          width={1600}
+          height={1000}
+          sizes="
+            (max-width: 767px) 100vw,
+            (max-width: 1024px) 50vw,
+            33vw
+          "
+          className="more-work-image"
+        />
 
-      <MoreWorkInfo title={title} type={type} />
+        <span className="more-work-number">{project.number}</span>
+
+        {project.href && (
+          <span className="more-work-arrow" aria-hidden="true">
+            ↗
+          </span>
+        )}
+
+        <span className="more-work-overlay" aria-hidden="true" />
+      </div>
+
+      <div className="more-work-info">
+        <h3>{project.title}</h3>
+
+        <p>{project.type[language]}</p>
+      </div>
     </>
   );
 
-  /* ---------------------------------------------------------
-     CLICKABLE PROJECT
-  --------------------------------------------------------- */
-
-  if (href) {
+  if (project.href) {
     return (
       <a
-        href={href}
+        href={project.href}
         target="_blank"
         rel="noreferrer"
         className={className}
-        aria-label={`View ${title}`}>
+        aria-label={`View ${project.title}`}>
         {content}
       </a>
     );
   }
 
-  /* ---------------------------------------------------------
-     STATIC PROJECT
-  --------------------------------------------------------- */
-
   return <article className={className}>{content}</article>;
-}
-
-/* =========================================================
-   PROJECT VISUAL
-========================================================= */
-
-type MoreWorkVisualProps = {
-  title: MoreWorkProject["title"];
-  image: MoreWorkProject["image"];
-  number: MoreWorkProject["number"];
-  hasLink: boolean;
-};
-
-function MoreWorkVisual({
-  title,
-  image,
-  number,
-  hasLink,
-}: MoreWorkVisualProps) {
-  return (
-    <div className="more-work-visual">
-      {/* -----------------------------------------------------
-          IMAGE
-      ----------------------------------------------------- */}
-
-      <Image
-        src={image}
-        alt={`${title} project`}
-        width={1600}
-        height={1000}
-        sizes="
-          (max-width: 767px) 100vw,
-          (max-width: 1024px) 50vw,
-          33vw
-        "
-        className="more-work-image"
-      />
-
-      {/* -----------------------------------------------------
-          PROJECT NUMBER
-      ----------------------------------------------------- */}
-
-      <span className="more-work-number">{number}</span>
-
-      {/* -----------------------------------------------------
-          LINK INDICATOR
-      ----------------------------------------------------- */}
-
-      {hasLink && (
-        <span className="more-work-arrow" aria-hidden="true">
-          ↗
-        </span>
-      )}
-
-      {/* -----------------------------------------------------
-          HOVER OVERLAY
-      ----------------------------------------------------- */}
-
-      <span className="more-work-overlay" aria-hidden="true" />
-    </div>
-  );
-}
-
-/* =========================================================
-   PROJECT INFO
-========================================================= */
-
-type MoreWorkInfoProps = {
-  title: MoreWorkProject["title"];
-  type: MoreWorkProject["type"];
-};
-
-function MoreWorkInfo({ title, type }: MoreWorkInfoProps) {
-  return (
-    <div className="more-work-info">
-      <h3>{title}</h3>
-
-      <p>{type}</p>
-    </div>
-  );
 }

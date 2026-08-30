@@ -1,16 +1,90 @@
 /* =========================================================
+   CERTIFICATIONS
+========================================================= */
+
+export const certifications = [
+  {
+    year: "2026",
+
+    provider: "Codecademy",
+
+    program: "UX Designer Career Path",
+
+    credentialUrl:
+      "https://www.codecademy.com/profiles/data1030721289/certificates/c2a72f8e81dd4fada36a71a7f8968ac1",
+  },
+
+  {
+    year: "2024",
+
+    provider: "Codecademy",
+
+    program: "Learn Interaction Design Course",
+
+    credentialUrl:
+      "https://www.codecademy.com/profiles/data1030721289/certificates/480eaeabe094423f8935cf972c7e27de",
+  },
+
+  {
+    year: "2024",
+
+    provider: "Generation Thailand",
+
+    program: "Junior Software Developer Program (Cohort 6)",
+
+    credentialUrl:
+      "https://www.linkedin.com/in/kanes-kaewchui-131851235/overlay/Honor/144576646/treasury/?profileId=ACoAADquDHUBUylvRgTb40zCh-43lRSM_nVkrC4",
+  },
+
+  {
+    year: "2022",
+
+    provider: "Born to dev",
+
+    program: "Complete UX/UI Design",
+
+    credentialUrl:
+      "https://www.borntodev.com/certificate_online/038b565ca0184ad7cdd2fc5097d06242/",
+  },
+] as const;
+
+/* =========================================================
    CAPABILITIES
 ========================================================= */
 
 export const capabilities = [
-  "Product Design",
-  "UX/UI Design",
-  "Design Systems",
-  "User Flows",
-  "Information Architecture",
-  "Prototyping",
-  "Responsive Design",
-  "Front-end Collaboration",
+  {
+    en: "Product Design",
+    th: "การออกแบบ Product",
+  },
+  {
+    en: "UX/UI Design",
+    th: "UX/UI Design",
+  },
+  {
+    en: "Design Systems",
+    th: "Design Systems",
+  },
+  {
+    en: "User Flows",
+    th: "User Flow",
+  },
+  {
+    en: "Information Architecture",
+    th: "Information Architecture",
+  },
+  {
+    en: "Prototyping",
+    th: "การทำ Prototype",
+  },
+  {
+    en: "Responsive Design",
+    th: "Responsive Design",
+  },
+  {
+    en: "Front-end Collaboration",
+    th: "ทำงานร่วมกับ Front-end",
+  },
 ] as const;
 
 /* =========================================================
@@ -18,15 +92,42 @@ export const capabilities = [
 ========================================================= */
 
 export const capabilityMarquee = [
-  "FIGMA",
-  "PRODUCT DESIGN",
-  "UX/UI",
-  "DESIGN SYSTEMS",
-  "USER FLOWS",
-  "INFORMATION ARCHITECTURE",
-  "PROTOTYPING",
-  "RESPONSIVE DESIGN",
-  "FRONT-END",
+  {
+    en: "FIGMA",
+    th: "FIGMA",
+  },
+  {
+    en: "PRODUCT DESIGN",
+    th: "PRODUCT DESIGN",
+  },
+  {
+    en: "UX/UI",
+    th: "UX/UI",
+  },
+  {
+    en: "DESIGN SYSTEMS",
+    th: "DESIGN SYSTEMS",
+  },
+  {
+    en: "USER FLOWS",
+    th: "USER FLOW",
+  },
+  {
+    en: "INFORMATION ARCHITECTURE",
+    th: "INFORMATION ARCHITECTURE",
+  },
+  {
+    en: "PROTOTYPING",
+    th: "PROTOTYPE",
+  },
+  {
+    en: "RESPONSIVE DESIGN",
+    th: "RESPONSIVE DESIGN",
+  },
+  {
+    en: "FRONT-END",
+    th: "FRONT-END",
+  },
 ] as const;
 
 /* =========================================================
@@ -36,20 +137,47 @@ export const capabilityMarquee = [
 export const strengths = [
   {
     number: "01",
-    title: "PRODUCT THINKING",
-    body: "Structure the problem around user goals, business needs, workflows, and system states.",
+
+    title: {
+      en: "PRODUCT THINKING",
+      th: "การคิดในมุม PRODUCT",
+    },
+
+    body: {
+      en: "Structure the problem around user goals, business needs, workflows, and system states.",
+
+      th: "มองโจทย์จากทั้งเป้าหมายของผู้ใช้ ความต้องการของธุรกิจ ขั้นตอนการใช้งาน และสถานะต่าง ๆ ของระบบ",
+    },
   },
 
   {
     number: "02",
-    title: "TECHNICAL COLLABORATION",
-    body: "Design with implementation constraints and engineering collaboration in mind.",
+
+    title: {
+      en: "TECHNICAL COLLABORATION",
+      th: "ทำงานร่วมกับทีมพัฒนา",
+    },
+
+    body: {
+      en: "Design with implementation constraints and engineering collaboration in mind.",
+
+      th: "ออกแบบโดยคำนึงถึงข้อจำกัดในการพัฒนาจริง และสามารถคุยกับทีมพัฒนาเพื่อหาทางออกที่เหมาะสมร่วมกันได้",
+    },
   },
 
   {
     number: "03",
-    title: "VISUAL FOUNDATION",
-    body: "Use hierarchy, composition, and visual clarity to make complex information easier to understand.",
+
+    title: {
+      en: "VISUAL FOUNDATION",
+      th: "พื้นฐานด้าน VISUAL",
+    },
+
+    body: {
+      en: "Use hierarchy, composition, and visual clarity to make complex information easier to understand.",
+
+      th: "ใช้ลำดับความสำคัญ การจัดองค์ประกอบ และความชัดเจนทาง Visual เพื่อช่วยให้ข้อมูลที่ซับซ้อนเข้าใจง่ายขึ้น",
+    },
   },
 ] as const;
 
@@ -58,18 +186,20 @@ export const strengths = [
 ========================================================= */
 
 export const backgroundPath = [
-  /* -------------------------------------------------------
-     GRAPHIC DESIGN
-  ------------------------------------------------------- */
-
   {
     number: "01",
     year: "2021",
 
-    title: "GRAPHIC DESIGN",
+    title: {
+      en: "GRAPHIC DESIGN",
+      th: "GRAPHIC DESIGN",
+    },
 
-    description:
-      "Built a foundation in layout, branding, visual communication, and content presentation.",
+    description: {
+      en: "Built a foundation in layout, branding, visual communication, and content presentation.",
+
+      th: "เริ่มจากงานออกแบบกราฟิก และได้พื้นฐานด้าน Layout, Branding, Visual Communication และการนำเสนอข้อมูล",
+    },
 
     accent: "#F28A00",
     hoverBg: "#FFF5E8",
@@ -77,18 +207,20 @@ export const backgroundPath = [
     current: false,
   },
 
-  /* -------------------------------------------------------
-     FULL-STACK
-  ------------------------------------------------------- */
-
   {
     number: "02",
     year: "2024",
 
-    title: "FULL-STACK",
+    title: {
+      en: "FULL-STACK",
+      th: "FULL-STACK DEVELOPMENT",
+    },
 
-    description:
-      "Expanded into development, learning how interfaces, systems, and implementation work together.",
+    description: {
+      en: "Expanded into development, learning how interfaces, systems, and implementation work together.",
+
+      th: "ต่อยอดเข้าสู่สาย Development ทำให้เข้าใจมากขึ้นว่าหน้าจอ ระบบ และการพัฒนาจริงทำงานเชื่อมกันอย่างไร",
+    },
 
     accent: "#1850BF",
     hoverBg: "#EEF4FF",
@@ -96,18 +228,20 @@ export const backgroundPath = [
     current: false,
   },
 
-  /* -------------------------------------------------------
-     UX/UI DESIGN
-  ------------------------------------------------------- */
-
   {
     number: "03",
     year: "2024",
 
-    title: "UX/UI DESIGN",
+    title: {
+      en: "UX/UI DESIGN",
+      th: "UX/UI DESIGN",
+    },
 
-    description:
-      "Shifted toward user flows, interface structure, usability, and digital product experiences.",
+    description: {
+      en: "Shifted toward user flows, interface structure, usability, and digital product experiences.",
+
+      th: "เริ่มโฟกัสกับ User Flow โครงสร้างหน้าจอ การใช้งาน และประสบการณ์ของผู้ใช้มากขึ้น",
+    },
 
     accent: "#2F76FF",
     hoverBg: "#EEF5FF",
@@ -115,18 +249,20 @@ export const backgroundPath = [
     current: false,
   },
 
-  /* -------------------------------------------------------
-     PRODUCT-FOCUSED UX/UI
-  ------------------------------------------------------- */
-
   {
     number: "04",
     year: "2026",
 
-    title: "PRODUCT-FOCUSED UX/UI",
+    title: {
+      en: "PRODUCT-FOCUSED UX/UI",
+      th: "UX/UI + PRODUCT THINKING",
+    },
 
-    description:
-      "Applying UX/UI design with stronger product thinking, system understanding, and implementation awareness.",
+    description: {
+      en: "Applying UX/UI design with stronger product thinking, system understanding, and implementation awareness.",
+
+      th: "นำประสบการณ์ด้าน UX/UI, Development และ Visual มารวมกัน เพื่อออกแบบโดยมองทั้งผู้ใช้ ระบบ และสิ่งที่สามารถนำไปพัฒนาต่อได้จริง",
+    },
 
     accent: "#F25555",
     hoverBg: "#FFF1F1",
@@ -140,15 +276,15 @@ export const backgroundPath = [
 ========================================================= */
 
 export const moreWork = [
-  /* -------------------------------------------------------
-     TSPLUS THAILAND
-  ------------------------------------------------------- */
-
   {
     number: "01",
 
     title: "TSPlus Thailand",
-    type: "Corporate Website",
+
+    type: {
+      en: "Corporate Website",
+      th: "เว็บไซต์องค์กร",
+    },
 
     image: "/images/work/more/tsplus-thailand.svg",
 
@@ -157,15 +293,15 @@ export const moreWork = [
     tone: "indigo",
   },
 
-  /* -------------------------------------------------------
-     PROMPT DESIGN
-  ------------------------------------------------------- */
-
   {
     number: "02",
 
     title: "PROMPT DESIGN",
-    type: "Responsive Website",
+
+    type: {
+      en: "Responsive Website",
+      th: "เว็บไซต์ Responsive",
+    },
 
     image: "/images/work/more/promptdesign.svg",
 
@@ -174,15 +310,15 @@ export const moreWork = [
     tone: "blue",
   },
 
-  /* -------------------------------------------------------
-     SIRIPEN SCHOOL
-  ------------------------------------------------------- */
-
   {
     number: "03",
 
     title: "Siripen School",
-    type: "Education Website",
+
+    type: {
+      en: "Education Website",
+      th: "เว็บไซต์การศึกษา",
+    },
 
     image: "/images/work/more/siripenschool.svg",
 
@@ -191,15 +327,15 @@ export const moreWork = [
     tone: "mango",
   },
 
-  /* -------------------------------------------------------
-     FARM MAE JARD
-  ------------------------------------------------------- */
-
   {
     number: "04",
 
     title: "Farm Mae Jard",
-    type: "Responsive Website",
+
+    type: {
+      en: "Responsive Website",
+      th: "เว็บไซต์ Responsive",
+    },
 
     image: "/images/work/more/FARMMAEJARD.svg",
 
@@ -208,16 +344,15 @@ export const moreWork = [
     tone: "mango",
   },
 
-  /* -------------------------------------------------------
-     HARDWARE HOUSE LINE CRM
-  ------------------------------------------------------- */
-
   {
     number: "05",
 
     title: "Hardware House LINE CRM",
 
-    type: "CRM / Workflow Design",
+    type: {
+      en: "CRM / Workflow Design",
+      th: "CRM / ออกแบบ Workflow",
+    },
 
     image: "/images/work/more/hardwarehouse.svg",
 
@@ -226,16 +361,15 @@ export const moreWork = [
     tone: "green",
   },
 
-  /* -------------------------------------------------------
-     ACDELCO LINE CRM
-  ------------------------------------------------------- */
-
   {
     number: "06",
 
     title: "ACDelco LINE CRM",
 
-    type: "CRM / Workflow Design",
+    type: {
+      en: "CRM / Workflow Design",
+      th: "CRM / ออกแบบ Workflow",
+    },
 
     image: "/images/work/more/ACDelco.svg",
 
@@ -257,7 +391,10 @@ export const experiences = [
 
     role: "UX/UI Designer & Front-end Developer",
 
-    type: "Contract",
+    type: {
+      en: "Contract",
+      th: "สัญญาจ้าง",
+    },
   },
 
   {
@@ -267,7 +404,10 @@ export const experiences = [
 
     role: "UX/UI Designer",
 
-    type: "Contract",
+    type: {
+      en: "Contract",
+      th: "สัญญาจ้าง",
+    },
   },
 
   {
@@ -277,7 +417,10 @@ export const experiences = [
 
     role: "Full-Stack Developer",
 
-    type: "Full-time",
+    type: {
+      en: "Full-time",
+      th: "ประจำ",
+    },
   },
 
   {
@@ -287,7 +430,10 @@ export const experiences = [
 
     role: "Freelance UX/UI Designer",
 
-    type: "Freelance",
+    type: {
+      en: "Freelance",
+      th: "ฟรีแลนซ์",
+    },
   },
 
   {
@@ -297,7 +443,10 @@ export const experiences = [
 
     role: "Full-Stack Developer Intern",
 
-    type: "Internship",
+    type: {
+      en: "Internship",
+      th: "ฝึกงาน",
+    },
   },
 
   {
@@ -307,72 +456,9 @@ export const experiences = [
 
     role: "Graphic Designer & Freelance Graphic Designer",
 
-    type: "Full-time / Freelance",
-  },
-] as const;
-
-/* =========================================================
-   CERTIFICATIONS
-========================================================= */
-
-export const certifications = [
-  /* -------------------------------------------------------
-     CODECADEMY — UX DESIGNER
-  ------------------------------------------------------- */
-
-  {
-    year: "2026",
-
-    provider: "Codecademy",
-
-    program: "UX Designer Career Path",
-
-    credentialUrl:
-      "https://www.codecademy.com/profiles/data1030721289/certificates/c2a72f8e81dd4fada36a71a7f8968ac1",
-  },
-
-  /* -------------------------------------------------------
-     CODECADEMY — INTERACTION DESIGN
-  ------------------------------------------------------- */
-
-  {
-    year: "2024",
-
-    provider: "Codecademy",
-
-    program: "Learn Interaction Design Course",
-
-    credentialUrl:
-      "https://www.codecademy.com/profiles/data1030721289/certificates/480eaeabe094423f8935cf972c7e27de",
-  },
-
-  /* -------------------------------------------------------
-     GENERATION THAILAND
-  ------------------------------------------------------- */
-
-  {
-    year: "2024",
-
-    provider: "Generation Thailand",
-
-    program: "Junior Software Developer Program (Cohort 6)",
-
-    credentialUrl:
-      "https://www.linkedin.com/in/kanes-kaewchui-131851235/overlay/Honor/144576646/treasury/?profileId=ACoAADquDHUBUylvRgTb40zCh-43lRSM_nVkrC4",
-  },
-
-  /* -------------------------------------------------------
-     BORN TO DEV
-  ------------------------------------------------------- */
-
-  {
-    year: "2022",
-
-    provider: "Born to dev",
-
-    program: "Complete UX/UI Design",
-
-    credentialUrl:
-      "https://www.borntodev.com/certificate_online/038b565ca0184ad7cdd2fc5097d06242/",
+    type: {
+      en: "Full-time / Freelance",
+      th: "ประจำ / ฟรีแลนซ์",
+    },
   },
 ] as const;

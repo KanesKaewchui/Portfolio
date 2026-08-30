@@ -4,25 +4,6 @@ import { messages } from "@/i18n";
 import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
-   HERO DATA
-========================================================= */
-
-const HERO_META = [
-  {
-    label: "BASED IN",
-    type: "location",
-  },
-  {
-    label: "FOCUS",
-    value: "UX/UI Design · Product Thinking · Design Systems",
-  },
-  {
-    label: "BACKGROUND",
-    value: "Full Stack Development",
-  },
-] as const;
-
-/* =========================================================
    HERO SECTION
 ========================================================= */
 
@@ -72,19 +53,23 @@ export default function HeroSection() {
       ===================================================== */}
 
       <div className="hero-meta">
-        {HERO_META.map((item) => (
-          <div key={item.label} className="hero-meta-item">
-            <span className="meta-label">{item.label}</span>
+        <div className="hero-meta-item">
+          <span className="meta-label">{t.basedInLabel}</span>
 
-            <span>
-              {"type" in item && item.type === "location"
-                ? t.basedIn
-                : "value" in item
-                  ? item.value
-                  : null}
-            </span>
-          </div>
-        ))}
+          <span>{t.basedIn}</span>
+        </div>
+
+        <div className="hero-meta-item">
+          <span className="meta-label">{t.focusLabel}</span>
+
+          <span>{t.focus}</span>
+        </div>
+
+        <div className="hero-meta-item">
+          <span className="meta-label">{t.backgroundLabel}</span>
+
+          <span>{t.background}</span>
+        </div>
       </div>
 
       {/* =====================================================

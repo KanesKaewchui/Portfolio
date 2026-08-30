@@ -6,6 +6,10 @@ import Reveal from "@/components/ui/Reveal";
 
 import { capabilities, capabilityMarquee } from "@/data/home";
 
+import { messages, type Language } from "@/i18n";
+
+import { usePortfolio } from "@/providers/PortfolioProvider";
+
 /* =========================================================
    CONSTANTS
 ========================================================= */
@@ -17,6 +21,10 @@ const MARQUEE_SPEED = 45;
 ========================================================= */
 
 export default function CapabilitiesSection() {
+  const { language } = usePortfolio();
+
+  const t = messages[language].capabilities;
+
   return (
     <section id="capabilities" className="section site-shell">
       {/* =====================================================
@@ -25,12 +33,12 @@ export default function CapabilitiesSection() {
 
       <div className="section-heading">
         <div>
-          <p className="eyebrow">05 — CAPABILITIES</p>
+          <p className="eyebrow">{t.eyebrow}</p>
 
-          <h2>What I bring to product work</h2>
+          <h2>{t.title}</h2>
         </div>
 
-        <p>A concise view of the work I do best.</p>
+        <p>{t.description}</p>
       </div>
 
       {/* =====================================================
@@ -38,52 +46,39 @@ export default function CapabilitiesSection() {
       ===================================================== */}
 
       <div className="capabilities-grid">
-        {capabilities.map((capability, index) => (
-          <CapabilityItem
-            key={capability}
-            capability={capability}
-            index={index}
-          />
-        ))}
+        {capabilities.map((capability, index) => {
+          const number = String(index + 1).padStart(2, "0");
+
+          return (
+            <Reveal key={capability.en} delay={(index % 4) * 40}>
+              <div className="capability-row">
+                <span className="capability-number">{number}</span>
+
+                <h3 className="capability-title">{capability[language]}</h3>
+              </div>
+            </Reveal>
+          );
+        })}
       </div>
 
       {/* =====================================================
-          INFINITE MARQUEE
+          MARQUEE
       ===================================================== */}
 
-      <CapabilityMarquee />
+      <CapabilityMarquee language={language} />
     </section>
   );
 }
 
 /* =========================================================
-   CAPABILITY ITEM
+   MARQUEE
 ========================================================= */
 
-type CapabilityItemProps = {
-  capability: (typeof capabilities)[number];
-  index: number;
+type CapabilityMarqueeProps = {
+  language: Language;
 };
 
-function CapabilityItem({ capability, index }: CapabilityItemProps) {
-  const number = String(index + 1).padStart(2, "0");
-
-  return (
-    <Reveal delay={(index % 4) * 40}>
-      <div className="capability-row">
-        <span className="capability-number">{number}</span>
-
-        <h3 className="capability-title">{capability}</h3>
-      </div>
-    </Reveal>
-  );
-}
-
-/* =========================================================
-   CAPABILITY MARQUEE
-========================================================= */
-
-function CapabilityMarquee() {
+function CapabilityMarquee({ language }: CapabilityMarqueeProps) {
   const trackRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -93,71 +88,30 @@ function CapabilityMarquee() {
       return;
     }
 
-    /* -------------------------------------------------------
-       ANIMATION STATE
-    ------------------------------------------------------- */
-
     let animationFrame = 0;
     let offset = 0;
 
     let previousTime = performance.now();
 
-    /* -------------------------------------------------------
-       ANIMATION LOOP
-    ------------------------------------------------------- */
-
     const animate = (currentTime: number) => {
-      /*
-        เวลาที่ผ่านไปในแต่ละ Frame
-        แปลงจาก milliseconds → seconds
-      */
       const deltaTime = (currentTime - previousTime) / 1000;
 
       previousTime = currentTime;
 
-      /*
-        Track มีข้อความเหมือนกัน 2 Groups
-
-        ดังนั้นครึ่งหนึ่งของ scrollWidth
-        = ความกว้างของ Group หนึ่งชุด
-      */
       const groupWidth = track.scrollWidth / 2;
 
-      /*
-        เลื่อนไปทางซ้ายตามความเร็ว
-      */
       offset -= MARQUEE_SPEED * deltaTime;
 
-      /*
-        เมื่อ Group 01 เลื่อนออกไปหมด
-        ย้ายตำแหน่งกลับหนึ่ง Group
-
-        Group 02 มีข้อมูลเหมือนกัน
-        จึงเกิด Infinite Loop
-        โดยไม่เห็นจังหวะ Reset
-      */
       if (groupWidth > 0 && Math.abs(offset) >= groupWidth) {
         offset += groupWidth;
       }
 
-      /*
-        ใช้ translate3d เพื่อให้ Browser
-        จัดการ Animation ผ่าน GPU ได้ดีขึ้น
-      */
       track.style.transform = `translate3d(${offset}px, 0, 0)`;
 
       animationFrame = requestAnimationFrame(animate);
     };
 
-    /* -------------------------------------------------------
-       START
-    ------------------------------------------------------- */
-
     animationFrame = requestAnimationFrame(animate);
-
-    /* -------------------------------------------------------
-       CLEANUP
-    ------------------------------------------------------- */
 
     return () => {
       cancelAnimationFrame(animationFrame);
@@ -167,15 +121,9 @@ function CapabilityMarquee() {
   return (
     <div className="capability-marquee" aria-hidden="true">
       <div ref={trackRef} className="capability-marquee-track">
-        {/* GROUP 01 */}
+        <MarqueeGroup language={language} />
 
-        <MarqueeGroup />
-
-        {/* GROUP 02
-            Duplicate สำหรับ Infinite Loop
-        */}
-
-        <MarqueeGroup />
+        <MarqueeGroup language={language} />
       </div>
     </div>
   );
@@ -185,12 +133,16 @@ function CapabilityMarquee() {
    MARQUEE GROUP
 ========================================================= */
 
-function MarqueeGroup() {
+type MarqueeGroupProps = {
+  language: Language;
+};
+
+function MarqueeGroup({ language }: MarqueeGroupProps) {
   return (
     <div className="capability-marquee-group">
       {capabilityMarquee.map((item) => (
-        <span key={item} className="capability-marquee-item">
-          {item}
+        <span key={item.en} className="capability-marquee-item">
+          {item[language]}
 
           <span className="capability-marquee-separator" aria-hidden="true">
             —

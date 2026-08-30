@@ -30,7 +30,7 @@ export const en = {
     ],
 
     description:
-      "UX/UI Designer with a full-stack development background, turning complex workflows into clear and practical experiences while keeping real implementation in mind.",
+      "I’m a UX/UI Designer with a full-stack development background. I approach design from the user, system, and implementation sides to create experiences that are clear, practical, and realistic to build.",
 
     primaryCta: "View Work",
 
@@ -59,7 +59,7 @@ export const en = {
     currentlyExploring: "CURRENTLY EXPLORING",
 
     currentlyExploringDescription:
-      "Making product workflows feel lighter and more human.",
+      "Making complex product workflows easier to understand and use.",
 
     selectedWork: "Selected Work",
   },
@@ -74,7 +74,7 @@ export const en = {
     title: "Work",
 
     description:
-      "Selected projects showing how I approach problems, structure information, and design solutions.",
+      "Selected projects showing how I approach problems, structure information, and turn ideas into practical design solutions.",
 
     exploreProject: "View project",
   },
@@ -87,12 +87,14 @@ export const en = {
     eyebrow: "03 — ABOUT",
 
     statement: [
-      "I started as a Graphic Designer, moved into development and found",
-      "my place designing digital products.",
+      "I started in Graphic Design,",
+      "moved into Development,",
+      "and found that the work I enjoy most",
+      "is designing digital experiences.",
     ],
 
     description:
-      "That path helps me approach product work from more than one angle — combining visual thinking, user experience, system structure, and an understanding of how products are actually built.",
+      "That path helps me see design from different perspectives — visual communication, user experience, system structure, and the realities of implementation.",
   },
 
   /* =======================================================
@@ -105,7 +107,7 @@ export const en = {
     title: "Experience",
 
     description:
-      "A timeline across UX/UI, development, and visual design roles.",
+      "A career path across Graphic Design, Development, and UX/UI Design.",
   },
 
   /* =======================================================
@@ -118,7 +120,7 @@ export const en = {
     title: "Certifications",
 
     description:
-      "Selected courses and programs that have shaped how I approach design and technology.",
+      "Selected courses and programs that have helped me grow across UX/UI, development, and digital product design.",
 
     viewCredential: "View credential",
   },
@@ -130,9 +132,10 @@ export const en = {
   capabilities: {
     eyebrow: "06 — CAPABILITIES",
 
-    title: "What I bring to product work",
+    title: "What I do best",
 
-    description: "A concise view of the work I do best.",
+    description:
+      "The skills I use most often when designing products and working with development teams.",
   },
 
   /* =======================================================
@@ -145,7 +148,7 @@ export const en = {
     title: "More Work",
 
     description:
-      "Smaller projects, visual experiments, and selected client work.",
+      "Websites, design work, and other projects I’ve contributed to along the way.",
   },
 
   /* =======================================================
@@ -155,12 +158,12 @@ export const en = {
   contact: {
     eyebrow: "08 — CONTACT",
 
-    availability: "OPEN TO UX/UI & PRODUCT-FOCUSED OPPORTUNITIES",
+    availability: "OPEN TO NEW UX/UI OPPORTUNITIES",
 
     title: ["Have a product", "that could be", "simpler?"],
 
     description:
-      "Have a project, product, or digital experience that could be clearer? I’d be happy to talk.",
+      "If you’re working on a website, system, or digital product that could be clearer and easier to use, I’d be happy to talk.",
 
     /* -----------------------------------------------------
        CONTACT META
@@ -170,7 +173,16 @@ export const en = {
 
     basedInLabel: "BASED IN",
 
+    location: "Bangkok, Thailand",
+
     focusLabel: "FOCUS",
+
+    focusAreas: [
+      "UX/UI Design",
+      "Product Thinking",
+      "Design Systems",
+      "Front-end Collaboration",
+    ],
 
     statusLabel: "AVAILABILITY",
 
@@ -189,6 +201,8 @@ export const en = {
     builtWith: "Designed & built with Next.js",
 
     backToTop: "Back to top",
+
+    signature: "UX/UI · Product Thinking · Front-end",
   },
 
   /* =======================================================
@@ -231,7 +245,7 @@ export const en = {
     researchIntegrity: "RESEARCH INTEGRITY",
 
     researchIntegrityDescription:
-      "Evidence, assumptions, and items that still require user validation are kept clearly separated.",
+      "Evidence, assumptions, and anything that still requires user validation are kept clearly separated.",
 
     /* -----------------------------------------------------
        03 — DESIGN DECISIONS
@@ -250,7 +264,7 @@ export const en = {
     solutionTitle: "From structure to interface",
 
     /* -----------------------------------------------------
-       LEGACY / OPTIONAL LABELS
+       OPTIONAL LABELS
     ----------------------------------------------------- */
 
     informationArchitecture: "Information Architecture",
@@ -259,7 +273,7 @@ export const en = {
 
     wireframes: "Wireframes",
 
-    finalUI: "Final UI",
+    finalUI: "Final Interface",
 
     /* -----------------------------------------------------
        05 — REFLECTION

@@ -3,12 +3,19 @@
 import Reveal from "@/components/ui/Reveal";
 
 import { certifications } from "@/data/home";
+import { messages } from "@/i18n";
+
+import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
    CERTIFICATIONS SECTION
 ========================================================= */
 
 export default function CertificationsSection() {
+  const { language } = usePortfolio();
+
+  const t = messages[language].certifications;
+
   return (
     <section id="certifications" className="section site-shell">
       {/* =====================================================
@@ -17,15 +24,12 @@ export default function CertificationsSection() {
 
       <div className="section-heading">
         <div>
-          <p className="eyebrow">05 — CERTIFICATIONS</p>
+          <p className="eyebrow">{t.eyebrow}</p>
 
-          <h2>Certifications</h2>
+          <h2>{t.title}</h2>
         </div>
 
-        <p>
-          Selected courses and programs that have shaped how I approach design
-          and technology.
-        </p>
+        <p>{t.description}</p>
       </div>
 
       {/* =====================================================
@@ -34,73 +38,36 @@ export default function CertificationsSection() {
 
       <div className="certification-list">
         {certifications.map((certification, index) => (
-          <CertificationItem
+          <Reveal
             key={`${certification.provider}-${certification.program}`}
-            certification={certification}
-            index={index}
-          />
+            delay={index * 50}>
+            <article className="certification-row">
+              <span className="certification-year">{certification.year}</span>
+
+              <h3 className="certification-provider">
+                {certification.provider}
+              </h3>
+
+              <p className="certification-program">{certification.program}</p>
+
+              <a
+                className="certification-link"
+                href={certification.credentialUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${t.viewCredential}: ${certification.program}`}>
+                <span className="certification-link-label">
+                  {t.viewCredential}
+                </span>
+
+                <span className="certification-link-icon" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>
-  );
-}
-
-/* =========================================================
-   TYPES
-========================================================= */
-
-type Certification = (typeof certifications)[number];
-
-type CertificationItemProps = {
-  certification: Certification;
-  index: number;
-};
-
-/* =========================================================
-   CERTIFICATION ITEM
-========================================================= */
-
-function CertificationItem({ certification, index }: CertificationItemProps) {
-  const { year, provider, program, credentialUrl } = certification;
-
-  return (
-    <Reveal delay={index * 50}>
-      <article className="certification-row">
-        {/* -------------------------------------------------
-            YEAR
-        ------------------------------------------------- */}
-
-        <span className="certification-year">{year}</span>
-
-        {/* -------------------------------------------------
-            PROVIDER
-        ------------------------------------------------- */}
-
-        <h3 className="certification-provider">{provider}</h3>
-
-        {/* -------------------------------------------------
-            PROGRAM
-        ------------------------------------------------- */}
-
-        <p className="certification-program">{program}</p>
-
-        {/* -------------------------------------------------
-            CREDENTIAL
-        ------------------------------------------------- */}
-
-        <a
-          className="certification-link"
-          href={credentialUrl}
-          target="_blank"
-          rel="noreferrer"
-          aria-label={`View ${program} credential`}>
-          <span className="certification-link-label">View credential</span>
-
-          <span className="certification-link-icon" aria-hidden="true">
-            ↗
-          </span>
-        </a>
-      </article>
-    </Reveal>
   );
 }

@@ -31,16 +31,15 @@ export default function AboutSection() {
       ===================================================== */}
 
       <div className="about-layout">
-        {/* -------------------------------------------------
-            MAIN STATEMENT
-        ------------------------------------------------- */}
-
         <Reveal>
           <div className="about-copy">
             <h2
-              className={`about-statement ${
-                language === "th" ? "about-statement--th" : ""
-              }`}>
+              className={[
+                "about-statement",
+                language === "th" ? "about-statement--th" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}>
               {t.statement.map((line) => (
                 <span key={line}>{line}</span>
               ))}
@@ -50,9 +49,9 @@ export default function AboutSection() {
           </div>
         </Reveal>
 
-        {/* -------------------------------------------------
+        {/* =================================================
             STRENGTHS
-        ------------------------------------------------- */}
+        ================================================= */}
 
         <div className="strength-list">
           {strengths.map((item, index) => (
@@ -61,9 +60,9 @@ export default function AboutSection() {
                 <span className="strength-number">{item.number}</span>
 
                 <div className="strength-content">
-                  <b>{item.title}</b>
+                  <b>{item.title[language]}</b>
 
-                  <p>{item.body}</p>
+                  <p>{item.body[language]}</p>
                 </div>
               </div>
             </Reveal>
@@ -79,49 +78,32 @@ export default function AboutSection() {
         {backgroundPath.map((item) => {
           const style = {
             "--accent": item.accent,
+
             "--hover-bg": item.hoverBg,
           } as CSSProperties;
 
-          const className = ["path-step", item.current ? "is-current" : ""]
-            .filter(Boolean)
-            .join(" ");
-
           return (
             <article
-              key={`${item.number}-${item.title}-${item.year}`}
-              className={className}
+              key={item.number}
+              className={["path-step", item.current ? "is-current" : ""]
+                .filter(Boolean)
+                .join(" ")}
               style={style}>
-              {/* ---------------------------------------------
-                  STEP HEADER
-              --------------------------------------------- */}
-
               <div className="path-topline">
                 <span className="path-number">{item.number}</span>
 
-                {item.current && <span className="path-current">CURRENT</span>}
+                {item.current && (
+                  <span className="path-current">
+                    {language === "th" ? "ปัจจุบัน" : "CURRENT"}
+                  </span>
+                )}
               </div>
-
-              {/* ---------------------------------------------
-                  YEAR
-              --------------------------------------------- */}
 
               <span className="path-year">{item.year}</span>
 
-              {/* ---------------------------------------------
-                  TITLE
-              --------------------------------------------- */}
+              <h3 className="path-title">{item.title[language]}</h3>
 
-              <h3 className="path-title">{item.title}</h3>
-
-              {/* ---------------------------------------------
-                  DESCRIPTION
-              --------------------------------------------- */}
-
-              <p className="path-description">{item.description}</p>
-
-              {/* ---------------------------------------------
-                  ACCENT LINE
-              --------------------------------------------- */}
+              <p className="path-description">{item.description[language]}</p>
 
               <span className="path-accent-line" aria-hidden="true" />
             </article>

@@ -3,7 +3,8 @@
 import Reveal from "@/components/ui/Reveal";
 
 import { experiences } from "@/data/home";
-import { messages } from "@/i18n";
+import { messages, type Language } from "@/i18n";
+
 import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
@@ -41,6 +42,7 @@ export default function ExperienceSection() {
             key={`${experience.company}-${experience.period}`}
             experience={experience}
             index={index}
+            language={language}
           />
         ))}
       </div>
@@ -57,41 +59,26 @@ type Experience = (typeof experiences)[number];
 type ExperienceItemProps = {
   experience: Experience;
   index: number;
+  language: Language;
 };
 
 /* =========================================================
    EXPERIENCE ITEM
 ========================================================= */
 
-function ExperienceItem({ experience, index }: ExperienceItemProps) {
+function ExperienceItem({ experience, index, language }: ExperienceItemProps) {
   const { period, company, role, type } = experience;
 
   return (
     <Reveal delay={(index % 4) * 40}>
       <article className="experience-row">
-        {/* -------------------------------------------------
-            PERIOD
-        ------------------------------------------------- */}
-
         <span className="experience-period">{period}</span>
-
-        {/* -------------------------------------------------
-            COMPANY
-        ------------------------------------------------- */}
 
         <h3 className="experience-company">{company}</h3>
 
-        {/* -------------------------------------------------
-            ROLE
-        ------------------------------------------------- */}
-
         <p className="experience-role">{role}</p>
 
-        {/* -------------------------------------------------
-            EMPLOYMENT TYPE
-        ------------------------------------------------- */}
-
-        <span className="experience-type">{type}</span>
+        <span className="experience-type">{type[language]}</span>
       </article>
     </Reveal>
   );

@@ -15,6 +15,25 @@ export const siteConfig = {
 
   location: "Bangkok, Thailand",
 
+  portfolioYear: 2026,
+
+  /* =======================================================
+     PROFESSIONAL FOCUS
+  ======================================================= */
+
+  focus: [
+    "UX/UI Design",
+    "Product Thinking",
+    "Design Systems",
+    "Front-end Collaboration",
+  ],
+
+  /* =======================================================
+     BACKGROUND
+  ======================================================= */
+
+  background: "Full Stack Development",
+
   /* =======================================================
      DOCUMENTS
   ======================================================= */
@@ -27,6 +46,7 @@ export const siteConfig = {
 
   social: {
     linkedin: "https://www.linkedin.com/in/kanes-kaewchui-131851235/",
+
     github: "https://github.com/KanesKaewchui",
   },
 } as const;
