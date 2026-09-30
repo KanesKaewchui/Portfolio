@@ -16,10 +16,6 @@ export default function ContactSection() {
       href: siteConfig.social.linkedin,
     },
     {
-      label: "Cv",
-      href: siteConfig.resumePath,
-    },
-    {
       label: "GitHub",
       href: siteConfig.social.github,
     },
@@ -56,10 +52,9 @@ export default function ContactSection() {
               <span />
             </div>
 
-            {/* =============================================
-                EMAIL
-            ============================================= */}
+          </div>
 
+          <aside className="contact-meta">
             <div className="contact-email">
               <span className="contact-label">{t.emailLabel}</span>
 
@@ -71,10 +66,6 @@ export default function ContactSection() {
                 </span>
               </a>
             </div>
-
-            {/* =============================================
-                SOCIAL
-            ============================================= */}
 
             <div className="social-links">
               {socialLinks.map((link) => (
@@ -89,29 +80,6 @@ export default function ContactSection() {
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* ===============================================
-              META
-          =============================================== */}
-
-          <aside className="contact-meta">
-            <div className="contact-meta-group">
-              <span className="contact-meta-label">{t.basedInLabel}</span>
-
-              <p>{t.location}</p>
-            </div>
-
-            <div className="contact-meta-group">
-              <span className="contact-meta-label">{t.focusLabel}</span>
-
-              <div className="contact-focus">
-                {t.focusAreas.map((area) => (
-                  <p key={area}>{area}</p>
-                ))}
-              </div>
-            </div>
-
           </aside>
         </div>
       </div>

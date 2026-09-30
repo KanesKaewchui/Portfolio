@@ -30,7 +30,6 @@ export default function SelectedWorkSection() {
           <h2>{t.title}</h2>
         </div>
 
-        <p>{t.description}</p>
       </div>
 
       {/* =====================================================

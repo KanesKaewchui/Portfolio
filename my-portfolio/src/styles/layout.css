@@ -210,6 +210,8 @@
 --------------------------------------------------------- */
 
 .site-footer {
+  display: none;
+
   position: relative;
 
   width: 100%;

@@ -73,9 +73,6 @@ export const en = {
 
     title: "Work",
 
-    description:
-      "Selected projects showing how I approach problems, structure information, and turn ideas into practical design solutions.",
-
     exploreProject: "View project",
   },
 
@@ -143,19 +140,6 @@ export const en = {
     ----------------------------------------------------- */
 
     emailLabel: "EMAIL",
-
-    basedInLabel: "BASED IN",
-
-    location: "Bangkok, Thailand",
-
-    focusLabel: "FOCUS",
-
-    focusAreas: [
-      "UX/UI Design",
-      "Product Thinking",
-      "Design Systems",
-      "Front-end Collaboration",
-    ],
 
   },
 

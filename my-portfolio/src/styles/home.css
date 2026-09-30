@@ -1692,7 +1692,7 @@
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.55fr)
+    minmax(0, 1.1fr)
     minmax(280px, 0.65fr);
 
   column-gap: clamp(72px, 8vw, 140px);
@@ -1728,9 +1728,7 @@
 
   font-weight: 500;
 
-  line-height: 0.98;
-
-  letter-spacing: -0.055em;
+  line-height: 1.2;
 }
 
 /* =========================================================
@@ -1951,60 +1949,14 @@
   padding-top: 6px;
 }
 
-/* ---------------------------------------------------------
-   META GROUP
---------------------------------------------------------- */
-
-.contact-meta-group {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 11px;
+.contact-meta .contact-email,
+.contact-meta .social-links {
+  margin-top: 0;
 }
 
-.contact-meta-label {
-  color: #bbe1fa;
-
-  font-size: 12px;
-
-  font-weight: 700;
-
-  line-height: 1.4;
-
-  letter-spacing: 0.13em;
-}
-
-.contact-meta-group > p {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 17px;
-
-  line-height: 1.6;
-}
-
-/* =========================================================
-   FOCUS
-========================================================= */
-
-.contact-focus {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 6px;
-}
-
-.contact-focus p {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 17px;
-
-  line-height: 1.55;
+.contact-meta .email-link-text {
+  font-size: clamp(22px, 2vw, 30px);
+  letter-spacing: -0.025em;
 }
 
 /* =========================================================
@@ -2043,8 +1995,8 @@
   }
 
   .contact-grid {
-    grid-template-columns:
-      minmax(0, 1.2fr)
+  grid-template-columns:
+      minmax(0, 1.1fr)
       minmax(230px, 0.8fr);
 
     column-gap: 60px;
@@ -2145,10 +2097,6 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
-  .contact-focus p,
-  .contact-meta-group > p {
-    font-size: 16px;
-  }
 }
 
 /* =========================================================
