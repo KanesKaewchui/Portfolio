@@ -146,8 +146,6 @@ button {
 
 .section {
   padding-block: 126px;
-
-  border-bottom: 1px solid var(--border);
 }
 
 /* =========================================================

@@ -49,88 +49,6 @@ export const certifications = [
 ] as const;
 
 /* =========================================================
-   CAPABILITIES
-========================================================= */
-
-export const capabilities = [
-  {
-    en: "Product Design",
-    th: "การออกแบบ Product",
-  },
-  {
-    en: "UX/UI Design",
-    th: "UX/UI Design",
-  },
-  {
-    en: "Design Systems",
-    th: "Design Systems",
-  },
-  {
-    en: "User Flows",
-    th: "User Flow",
-  },
-  {
-    en: "Information Architecture",
-    th: "Information Architecture",
-  },
-  {
-    en: "Prototyping",
-    th: "การทำ Prototype",
-  },
-  {
-    en: "Responsive Design",
-    th: "Responsive Design",
-  },
-  {
-    en: "Front-end Collaboration",
-    th: "ทำงานร่วมกับ Front-end",
-  },
-] as const;
-
-/* =========================================================
-   CAPABILITY MARQUEE
-========================================================= */
-
-export const capabilityMarquee = [
-  {
-    en: "FIGMA",
-    th: "FIGMA",
-  },
-  {
-    en: "PRODUCT DESIGN",
-    th: "PRODUCT DESIGN",
-  },
-  {
-    en: "UX/UI",
-    th: "UX/UI",
-  },
-  {
-    en: "DESIGN SYSTEMS",
-    th: "DESIGN SYSTEMS",
-  },
-  {
-    en: "USER FLOWS",
-    th: "USER FLOW",
-  },
-  {
-    en: "INFORMATION ARCHITECTURE",
-    th: "INFORMATION ARCHITECTURE",
-  },
-  {
-    en: "PROTOTYPING",
-    th: "PROTOTYPE",
-  },
-  {
-    en: "RESPONSIVE DESIGN",
-    th: "RESPONSIVE DESIGN",
-  },
-  {
-    en: "FRONT-END",
-    th: "FRONT-END",
-  },
-] as const;
-
-/* =========================================================
    STRENGTHS
 ========================================================= */
 
@@ -140,13 +58,10 @@ export const strengths = [
 
     title: {
       en: "PRODUCT THINKING",
-      th: "การคิดในมุม PRODUCT",
     },
 
     body: {
       en: "Structure the problem around user goals, business needs, workflows, and system states.",
-
-      th: "มองโจทย์จากทั้งเป้าหมายของผู้ใช้ ความต้องการของธุรกิจ ขั้นตอนการใช้งาน และสถานะต่าง ๆ ของระบบ",
     },
   },
 
@@ -155,13 +70,10 @@ export const strengths = [
 
     title: {
       en: "TECHNICAL COLLABORATION",
-      th: "ทำงานร่วมกับทีมพัฒนา",
     },
 
     body: {
       en: "Design with implementation constraints and engineering collaboration in mind.",
-
-      th: "ออกแบบโดยคำนึงถึงข้อจำกัดในการพัฒนาจริง และสามารถคุยกับทีมพัฒนาเพื่อหาทางออกที่เหมาะสมร่วมกันได้",
     },
   },
 
@@ -170,13 +82,10 @@ export const strengths = [
 
     title: {
       en: "VISUAL FOUNDATION",
-      th: "พื้นฐานด้าน VISUAL",
     },
 
     body: {
       en: "Use hierarchy, composition, and visual clarity to make complex information easier to understand.",
-
-      th: "ใช้ลำดับความสำคัญ การจัดองค์ประกอบ และความชัดเจนทาง Visual เพื่อช่วยให้ข้อมูลที่ซับซ้อนเข้าใจง่ายขึ้น",
     },
   },
 ] as const;
@@ -187,85 +96,65 @@ export const strengths = [
 
 export const backgroundPath = [
   {
-    number: "01",
     year: "2021",
 
     title: {
       en: "GRAPHIC DESIGN",
-      th: "GRAPHIC DESIGN",
     },
 
     description: {
       en: "Built a foundation in layout, branding, visual communication, and content presentation.",
-
-      th: "เริ่มจากงานออกแบบกราฟิก และได้พื้นฐานด้าน Layout, Branding, Visual Communication และการนำเสนอข้อมูล",
     },
 
     accent: "#F28A00",
-    hoverBg: "#FFF5E8",
 
     current: false,
   },
 
   {
-    number: "02",
     year: "2024",
 
     title: {
       en: "FULL-STACK",
-      th: "FULL-STACK DEVELOPMENT",
     },
 
     description: {
       en: "Expanded into development, learning how interfaces, systems, and implementation work together.",
-
-      th: "ต่อยอดเข้าสู่สาย Development ทำให้เข้าใจมากขึ้นว่าหน้าจอ ระบบ และการพัฒนาจริงทำงานเชื่อมกันอย่างไร",
     },
 
     accent: "#1850BF",
-    hoverBg: "#EEF4FF",
 
     current: false,
   },
 
   {
-    number: "03",
     year: "2024",
 
     title: {
       en: "UX/UI DESIGN",
-      th: "UX/UI DESIGN",
     },
 
     description: {
       en: "Shifted toward user flows, interface structure, usability, and digital product experiences.",
-
-      th: "เริ่มโฟกัสกับ User Flow โครงสร้างหน้าจอ การใช้งาน และประสบการณ์ของผู้ใช้มากขึ้น",
     },
 
     accent: "#2F76FF",
-    hoverBg: "#EEF5FF",
 
     current: false,
   },
 
   {
-    number: "04",
     year: "2026",
 
     title: {
       en: "PRODUCT-FOCUSED UX/UI",
-      th: "UX/UI + PRODUCT THINKING",
     },
 
     description: {
       en: "Applying UX/UI design with stronger product thinking, system understanding, and implementation awareness.",
-
-      th: "นำประสบการณ์ด้าน UX/UI, Development และ Visual มารวมกัน เพื่อออกแบบโดยมองทั้งผู้ใช้ ระบบ และสิ่งที่สามารถนำไปพัฒนาต่อได้จริง",
     },
 
     accent: "#F25555",
-    hoverBg: "#FFF1F1",
 
     current: false,
   },
@@ -283,7 +172,6 @@ export const moreWork = [
 
     type: {
       en: "Corporate Website",
-      th: "เว็บไซต์องค์กร",
     },
 
     image: "/images/work/more/tsplus-thailand.svg",
@@ -300,7 +188,6 @@ export const moreWork = [
 
     type: {
       en: "Responsive Website",
-      th: "เว็บไซต์ Responsive",
     },
 
     image: "/images/work/more/promptdesign.svg",
@@ -317,7 +204,6 @@ export const moreWork = [
 
     type: {
       en: "Education Website",
-      th: "เว็บไซต์การศึกษา",
     },
 
     image: "/images/work/more/siripenschool.svg",
@@ -334,7 +220,6 @@ export const moreWork = [
 
     type: {
       en: "Responsive Website",
-      th: "เว็บไซต์ Responsive",
     },
 
     image: "/images/work/more/FARMMAEJARD.svg",
@@ -351,7 +236,6 @@ export const moreWork = [
 
     type: {
       en: "CRM / Workflow Design",
-      th: "CRM / ออกแบบ Workflow",
     },
 
     image: "/images/work/more/hardwarehouse.svg",
@@ -368,7 +252,6 @@ export const moreWork = [
 
     type: {
       en: "CRM / Workflow Design",
-      th: "CRM / ออกแบบ Workflow",
     },
 
     image: "/images/work/more/ACDelco.svg",
@@ -385,7 +268,7 @@ export const moreWork = [
 
 export const experiences = [
   {
-    period: "2026 — NOW",
+    period: "2026",
 
     company: "Kachen Digital",
 
@@ -393,7 +276,6 @@ export const experiences = [
 
     type: {
       en: "Contract",
-      th: "สัญญาจ้าง",
     },
   },
 
@@ -406,12 +288,11 @@ export const experiences = [
 
     type: {
       en: "Contract",
-      th: "สัญญาจ้าง",
     },
   },
 
   {
-    period: "2024 — 2025",
+    period: "2024 - 2025",
 
     company: "Code Play",
 
@@ -419,20 +300,6 @@ export const experiences = [
 
     type: {
       en: "Full-time",
-      th: "ประจำ",
-    },
-  },
-
-  {
-    period: "2024",
-
-    company: "Freelance",
-
-    role: "Freelance UX/UI Designer",
-
-    type: {
-      en: "Freelance",
-      th: "ฟรีแลนซ์",
     },
   },
 
@@ -444,21 +311,19 @@ export const experiences = [
     role: "Full-Stack Developer Intern",
 
     type: {
-      en: "Internship",
-      th: "ฝึกงาน",
+      en: "Full-time",
     },
   },
 
   {
-    period: "2021 — 2024",
+    period: "2021 - 2024",
 
     company: "Kela Sport",
 
-    role: "Graphic Designer & Freelance Graphic Designer",
+    role: "Graphic Designer",
 
     type: {
-      en: "Full-time / Freelance",
-      th: "ประจำ / ฟรีแลนซ์",
+      en: "Full-time",
     },
   },
 ] as const;

@@ -3,18 +3,14 @@
 import Reveal from "@/components/ui/Reveal";
 
 import { experiences } from "@/data/home";
-import { messages, type Language } from "@/i18n";
-
-import { usePortfolio } from "@/providers/PortfolioProvider";
+import { messages } from "@/i18n";
 
 /* =========================================================
    EXPERIENCE SECTION
 ========================================================= */
 
 export default function ExperienceSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].experience;
+  const t = messages.en.experience;
 
   return (
     <section id="experience" className="section site-shell">
@@ -29,7 +25,6 @@ export default function ExperienceSection() {
           <h2>{t.title}</h2>
         </div>
 
-        <p>{t.description}</p>
       </div>
 
       {/* =====================================================
@@ -42,7 +37,6 @@ export default function ExperienceSection() {
             key={`${experience.company}-${experience.period}`}
             experience={experience}
             index={index}
-            language={language}
           />
         ))}
       </div>
@@ -59,14 +53,13 @@ type Experience = (typeof experiences)[number];
 type ExperienceItemProps = {
   experience: Experience;
   index: number;
-  language: Language;
 };
 
 /* =========================================================
    EXPERIENCE ITEM
 ========================================================= */
 
-function ExperienceItem({ experience, index, language }: ExperienceItemProps) {
+function ExperienceItem({ experience, index }: ExperienceItemProps) {
   const { period, company, role, type } = experience;
 
   return (
@@ -78,7 +71,7 @@ function ExperienceItem({ experience, index, language }: ExperienceItemProps) {
 
         <p className="experience-role">{role}</p>
 
-        <span className="experience-type">{type[language]}</span>
+        <span className="experience-type">{type.en}</span>
       </article>
     </Reveal>
   );

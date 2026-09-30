@@ -3,9 +3,7 @@
 import CaseStudyContent from "@/components/work/CaseStudyContent";
 import CaseStudyHero from "@/components/work/CaseStudyHero";
 
-import { getLocalizedWorkProject } from "@/data/work";
-
-import { usePortfolio } from "@/providers/PortfolioProvider";
+import { getWorkProjectContent } from "@/data/work";
 
 /* =========================================================
    TYPES
@@ -22,9 +20,7 @@ type CaseStudyPageClientProps = {
 export default function CaseStudyPageClient({
   slug,
 }: CaseStudyPageClientProps) {
-  const { language } = usePortfolio();
-
-  const project = getLocalizedWorkProject(slug, language);
+  const project = getWorkProjectContent(slug);
 
   /* =======================================================
      EMPTY STATE

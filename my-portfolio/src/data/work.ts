@@ -1,5 +1,3 @@
-import type { Language } from "@/i18n";
-
 import type { LocalizedWorkProject, WorkProject } from "@/types/work";
 
 /* =========================================================
@@ -16,8 +14,15 @@ const solarPoleProject = {
 
   cover: "/images/work/solarpole-plus/cover.webp",
 
-  /* หน้า Project Detail */
   caseCover: "/images/work/solarpole-plus/case-cover.jpg",
+
+  links: [
+    {
+      label: "View in Figma",
+      href: "",
+      type: "prototype",
+    },
+  ],
 
   content: {
     en: {
@@ -117,103 +122,6 @@ const solarPoleProject = {
       // reflection:
       //   "This project helped me think more deeply about designing back-office systems where clarity, information structure, and efficient management workflows are more important than visual complexity.",
     },
-
-    th: {
-      title: "SolarPole+",
-
-      subtitle: "ระบบจัดการกล้อง CCTV และ AI สำหรับเสาไฟโซลาร์เซลล์",
-
-      summary:
-        "Web Application หลังบ้านสำหรับจัดการข้อมูลกล้อง CCTV และความสามารถด้าน AI ที่เชื่อมต่อกับ SolarPole+ แต่ละจุดติดตั้ง",
-
-      category: "Product Design",
-
-      role: "UX/UI Designer",
-
-      platform: "Web Application",
-
-      overview:
-        "SolarPole+ เป็นเสาไฟพลังงานแสงอาทิตย์ที่รวมระบบแสงสว่าง กล้อง CCTV และความสามารถด้าน AI โปรเจกต์นี้เน้นการออกแบบ Web Application หลังบ้านสำหรับจัดการกล้องที่เชื่อมต่อกับ SolarPole+ โดยนำข้อมูลและฟังก์ชันที่เกี่ยวข้องกับกล้องมาจัดให้อยู่ในระบบที่ชัดเจนและจัดการได้ง่ายขึ้น",
-
-      problem:
-        "เมื่อมีการติดตั้ง SolarPole+ และกล้อง CCTV หลายจุด การจัดการข้อมูลของกล้อง รายละเอียดอุปกรณ์ และฟังก์ชันที่เกี่ยวข้องอาจซับซ้อนขึ้น หากข้อมูลไม่ได้ถูกจัดให้อยู่ในระบบเดียวกัน เจ้าหน้าที่จะใช้เวลาในการค้นหาและจัดการข้อมูลมากขึ้น",
-
-      goal: "ออกแบบระบบหลังบ้านที่ช่วยให้เจ้าหน้าที่สามารถจัดการกล้อง CCTV ที่เชื่อมต่อกับ SolarPole+ ตรวจสอบข้อมูลที่เกี่ยวข้อง และเข้าถึงฟังก์ชันต่าง ๆ ของระบบได้อย่างชัดเจนและไม่ซับซ้อน",
-
-      research: [
-        "ทบทวน Requirement ของระบบ",
-        "ทบทวนข้อมูลของกล้องและอุปกรณ์",
-        "วางโครงสร้าง Information Architecture",
-        "วางขั้นตอนการจัดการกล้อง",
-        "ทดลองโครงสร้างหน้าจอและการนำเสนอข้อมูล",
-      ],
-
-      decisions: [
-        {
-          title: "จัดโครงสร้างระบบโดยยึดการจัดการกล้องเป็นหลัก",
-
-          body: "วาง Information Architecture จากงานหลักที่เกี่ยวข้องกับการจัดการกล้อง เพื่อให้เจ้าหน้าที่สามารถเข้าถึงข้อมูลและฟังก์ชันที่เกี่ยวข้องได้โดยไม่ต้องผ่านขั้นตอนที่ซับซ้อน",
-        },
-        {
-          title: "จัดข้อมูลของกล้องให้อ่านและตรวจสอบได้ง่าย",
-
-          body: "แยกข้อมูลของกล้องและอุปกรณ์ออกเป็นกลุ่มที่ชัดเจน เพื่อลดความหนาแน่นของข้อมูลและช่วยให้เจ้าหน้าที่มองหาข้อมูลที่ต้องการได้เร็วขึ้น",
-        },
-        {
-          title: "ทำให้ความสัมพันธ์ระหว่างกล้องกับ SolarPole+ ชัดเจน",
-
-          body: "ออกแบบการนำเสนอข้อมูลให้เห็นได้ว่ากล้องแต่ละตัวเชื่อมโยงกับ SolarPole+ จุดใด เพื่อช่วยให้เข้าใจบริบทของอุปกรณ์แต่ละจุดได้ง่ายขึ้น",
-        },
-      ],
-      process: [
-        {
-          title: "Information Architecture",
-
-          description:
-            "จัดโครงสร้างระบบโดยยึดการจัดการกล้อง ข้อมูลอุปกรณ์ และฟังก์ชันที่เกี่ยวข้องเป็นหลัก เพื่อให้เจ้าหน้าที่เข้าใจว่าข้อมูลแต่ละส่วนอยู่ตรงไหนและเข้าถึงได้ง่าย",
-
-          image: "/images/work/solarpole-plus/information-architecture.png",
-
-          layout: "image-right",
-        },
-
-        {
-          title: "Camera Management Flow",
-
-          description:
-            "วาง Flow หลักตั้งแต่การดูรายการกล้อง เปิดดูรายละเอียด ไปจนถึงการเข้าถึงฟังก์ชันที่เกี่ยวข้องกับการจัดการกล้อง",
-
-          image: "/images/work/solarpole-plus/user-flow.png",
-
-          layout: "image-left",
-        },
-
-        {
-          title: "Wireframes",
-
-          description:
-            "ทดลองโครงสร้างของหน้าจอหลักก่อนลงรายละเอียดด้าน Visual โดยให้ความสำคัญกับลำดับข้อมูล Navigation และงานที่เกี่ยวข้องกับการจัดการกล้อง",
-
-          image: "/images/work/solarpole-plus/wireframes.png",
-
-          layout: "image-right",
-        },
-
-        {
-          title: "Final Interface",
-
-          description:
-            "นำโครงสร้างระบบและ Workflow มาพัฒนาเป็นหน้าจอหลังบ้านที่ช่วยให้การจัดการกล้องและข้อมูลของ SolarPole+ มีความชัดเจนมากขึ้น",
-
-          image: "/images/work/solarpole-plus/final-ui.png",
-
-          layout: "full",
-        },
-      ],
-
-      //   reflection:
-      //     "โปรเจกต์นี้ทำให้ผมได้ฝึกคิดการออกแบบระบบหลังบ้านที่มีข้อมูลอุปกรณ์หลายส่วน โดยให้ความสำคัญกับโครงสร้างข้อมูล ความชัดเจน และขั้นตอนการจัดการมากกว่าการเพิ่มองค์ประกอบบนหน้าจอโดยไม่จำเป็น",
-    },
   },
 } satisfies WorkProject;
 
@@ -237,6 +145,14 @@ const antiHumanTraffickingProject = {
 
   /* Case Study Hero */
   caseCover: "/images/work/anti-human/case-cover.png",
+
+  links: [
+    {
+      label: "View in Figma",
+      href: "",
+      type: "prototype",
+    },
+  ],
 
   /* =========================================================
      LOCALIZED CONTENT
@@ -374,130 +290,6 @@ const antiHumanTraffickingProject = {
     /* =======================================================
        THAI
     ======================================================= */
-
-    th: {
-      /* -----------------------------------------------------
-         BASIC INFORMATION
-      ----------------------------------------------------- */
-
-      title: "ระบบติดตามและวิเคราะห์ความเสี่ยงด้านการค้ามนุษย์",
-
-      subtitle: "ระบบติดตามความเสี่ยงและสนับสนุนการตรวจสอบพื้นที่",
-
-      summary:
-        "Web Application ที่นำข้อมูลความเสี่ยงมาจัดเป็นภาพรวมระดับพื้นที่ เพื่อช่วยให้เจ้าหน้าที่มองเห็นจุดที่ควรเฝ้าระวังและนำไปตรวจสอบเพิ่มเติมในพื้นที่จริง",
-
-      category: "Product Design",
-
-      role: "UX/UI Designer",
-
-      platform: "Web Application",
-
-      /* -----------------------------------------------------
-         01 — OVERVIEW
-      ----------------------------------------------------- */
-
-      overview:
-        "ระบบช่วยให้เจ้าหน้าที่ติดตามข้อมูลความเสี่ยงที่เกี่ยวข้องกับการค้ามนุษย์ในแต่ละพื้นที่ โดยนำข้อมูลที่รวบรวมมาแสดงเป็นระดับความเสี่ยง รายการที่ควรเร่งดำเนินการ อันดับพื้นที่เสี่ยง และประวัติการตรวจ เพื่อช่วยให้มองเห็นพื้นที่ที่ควรให้ความสนใจและนำไปตรวจสอบจริงต่อไป",
-
-      problem:
-        "เมื่อข้อมูลความเสี่ยงมีจำนวนมากและกระจายอยู่ในหลายพื้นที่ การมองเห็นภาพรวม การระบุพื้นที่ที่มีความเสี่ยงสูง และการตัดสินใจว่าพื้นที่ใดควรได้รับการตรวจสอบก่อนอาจทำได้ยาก",
-
-      goal: "ออกแบบประสบการณ์การติดตามข้อมูลที่ช่วยให้เจ้าหน้าที่เข้าใจสถานการณ์ความเสี่ยง มองเห็นพื้นที่ที่ควรให้ความสำคัญ ตรวจสอบข้อมูลประกอบ และใช้ข้อมูลเหล่านั้นสนับสนุนการวางแผนลงพื้นที่",
-
-      /* -----------------------------------------------------
-         02 — DISCOVERY & INPUTS
-      ----------------------------------------------------- */
-
-      research: [
-        "ทบทวน Requirement ของระบบ",
-        "ทบทวนโครงสร้างข้อมูลความเสี่ยง",
-        "วิเคราะห์ลำดับพื้นที่ จังหวัด และเขต/อำเภอ",
-        "วาง Flow การติดตามและตรวจสอบพื้นที่",
-        "ทดลองโครงสร้าง Dashboard และ Risk Map",
-      ],
-
-      /* -----------------------------------------------------
-         03 — DESIGN DECISIONS
-      ----------------------------------------------------- */
-
-      decisions: [
-        {
-          title: "แสดงความเสี่ยงและสิ่งที่ต้องเร่งดำเนินการก่อนรายละเอียด",
-
-          body: "นำระดับความเสี่ยง รายการสำคัญ และพื้นที่ที่ต้องเฝ้าระวังขึ้นมาเป็นข้อมูลแรก เพื่อให้เจ้าหน้าที่มองเห็นสิ่งที่ควรให้ความสำคัญก่อนลงไปดูข้อมูลรายละเอียด",
-        },
-
-        {
-          title: "ใช้ลำดับพื้นที่ช่วยให้เจาะจากภาพรวมไปสู่จุดตรวจสอบ",
-
-          body: "จัดข้อมูลความเสี่ยงตามจังหวัดและเขตหรืออำเภอ เพื่อให้สามารถเริ่มจากภาพรวมแล้วเจาะลงไปยังพื้นที่ที่ควรตรวจสอบเพิ่มเติมได้ง่ายขึ้น",
-        },
-
-        {
-          title: "เชื่อมข้อมูลภาพรวมเข้ากับการดำเนินงานภาคสนาม",
-
-          body: "ออกแบบให้ข้อมูลระดับความเสี่ยง อันดับพื้นที่ ประวัติการตรวจ และข้อมูลตามช่วงเวลาช่วยสนับสนุนการตัดสินใจว่าพื้นที่ใดควรได้รับการติดตามหรือตรวจสอบต่อ",
-        },
-      ],
-
-      /* -----------------------------------------------------
-         04 — SOLUTION
-      ----------------------------------------------------- */
-
-      process: [
-        {
-          title: "Information Architecture",
-
-          description:
-            "จัดโครงสร้างระบบตามงานหลักของเจ้าหน้าที่ โดยแยก Dashboard, Risk Map, ข้อมูลระดับพื้นที่ และข้อมูลที่เกี่ยวข้องกับการตรวจสอบออกจากกันอย่างชัดเจน เพื่อให้เข้าใจว่าข้อมูลแต่ละประเภทอยู่ตรงไหนและสามารถเข้าถึงได้ง่ายขึ้น",
-
-          image: "/images/work/anti-human/information-architecture.png",
-
-          layout: "image-right",
-        },
-
-        {
-          title: "Risk Monitoring Flow",
-
-          description:
-            "วาง Flow หลักตั้งแต่การดูภาพรวมสถานการณ์ความเสี่ยง การพบพื้นที่ที่ควรให้ความสนใจ การเจาะดูข้อมูลประกอบ ไปจนถึงการนำข้อมูลเหล่านั้นมาใช้พิจารณาว่าควรตรวจสอบพื้นที่จริงเพิ่มเติมหรือไม่",
-
-          image: "/images/work/anti-human/risk-monitoring-flow.png",
-
-          layout: "image-left",
-        },
-
-        {
-          title: "Wireframes",
-
-          description:
-            "ทดลองโครงสร้างหน้าจอระดับ Low-fidelity สำหรับ Dashboard, Risk Map และหน้าข้อมูลที่เกี่ยวข้อง เพื่อกำหนดลำดับข้อมูล Navigation และความสัมพันธ์ระหว่างข้อมูลก่อนพัฒนาเป็น Final UI",
-
-          image: "/images/work/anti-human/wireframes.png",
-
-          layout: "image-right",
-        },
-
-        {
-          title: "Final Interface",
-
-          description:
-            "นำโครงสร้างข้อมูลและ Flow การติดตามความเสี่ยงมาพัฒนาเป็นหน้าจอสำหรับการปฏิบัติงานจริง ช่วยให้เจ้าหน้าที่ตรวจสอบระดับความเสี่ยง มองเห็นพื้นที่สำคัญ เปรียบเทียบข้อมูลตามพื้นที่ และเข้าถึงข้อมูลประกอบที่ใช้สำหรับการตรวจสอบต่อได้ง่ายขึ้น",
-
-          image: "/images/work/anti-human/final-interface.png",
-
-          layout: "full",
-        },
-      ],
-
-      /* -----------------------------------------------------
-         05 — REFLECTION
-      ----------------------------------------------------- */
-
-      // reflection:
-      // "โปรเจกต์นี้ทำให้ผมได้ฝึกออกแบบระบบที่มีข้อมูลจำนวนมากและมีผลต่อการตัดสินใจ โดยโจทย์สำคัญไม่ใช่เพียงการแสดงข้อมูล แต่คือการช่วยให้ผู้ใช้เข้าใจลำดับความสำคัญ ความเสี่ยง และสิ่งที่ควรนำไปตรวจสอบต่อ",
-    },
   },
 } satisfies WorkProject;
 
@@ -522,6 +314,14 @@ const kachenCorporateWebsiteProject = {
 
   /* Case Study Hero */
   caseCover: "/images/work/kachen/case-cover.png",
+
+  links: [
+    {
+      label: "View in Website",
+      href: "https://www.kachen.co/",
+      type: "website",
+    },
+  ],
 
   /* =========================================================
      LOCALIZED CONTENT
@@ -607,8 +407,6 @@ const kachenCorporateWebsiteProject = {
       /* -----------------------------------------------------
          04 — SOLUTION
 
-         process ใช้แทน solutions
-         และ image จะอยู่ในแต่ละ Step
       ----------------------------------------------------- */
 
       process: [
@@ -679,147 +477,6 @@ const kachenCorporateWebsiteProject = {
     /* =======================================================
        THAI
     ======================================================= */
-
-    th: {
-      /* -----------------------------------------------------
-         BASIC INFORMATION
-      ----------------------------------------------------- */
-
-      title: "Kachen Corporate Website",
-
-      subtitle: "เว็บไซต์องค์กรสำหรับ Enterprise Software และ Ethical AI",
-
-      summary:
-        "ออกแบบและพัฒนาเว็บไซต์ Kachen ใหม่ เพื่อให้ข้อมูลด้าน Software และ AI ที่ค่อนข้างซับซ้อนเข้าใจง่ายขึ้น ใช้งานได้ชัดเจน และดูแลต่อได้ในระยะยาว",
-
-      category: "UX/UI + Front-end",
-
-      role: "UX/UI Designer & Front-end Developer",
-
-      platform: "Corporate Website",
-
-      /* -----------------------------------------------------
-         01 — OVERVIEW
-      ----------------------------------------------------- */
-
-      overview:
-        "Kachen เป็นบริษัทเทคโนโลยีที่ให้บริการด้าน Enterprise Software และ AI โปรเจกต์นี้เน้นการออกแบบเว็บไซต์องค์กรใหม่และพัฒนาด้วย Next.js โดยปรับทั้งโครงสร้างข้อมูล ประสบการณ์การใช้งาน และโครงสร้าง Front-end เพื่อให้เว็บไซต์เข้าใจง่าย มีความสม่ำเสมอ และสามารถดูแลหรือขยายต่อได้ง่ายขึ้น",
-
-      problem:
-        "เว็บไซต์ต้องนำเสนอผลิตภัณฑ์และบริการหลายประเภทที่มีระดับความซับซ้อนแตกต่างกัน หากโครงสร้างข้อมูลและรูปแบบการนำเสนอไม่ชัดเจน ผู้ใช้อาจเข้าใจได้ยากว่าบริษัทให้บริการอะไร รวมถึงทำให้การเพิ่มหรือปรับปรุงเนื้อหาในอนาคตทำได้ยากขึ้น",
-
-      goal: "ออกแบบโครงสร้างเว็บไซต์ที่ช่วยให้ผู้เข้าชมเข้าใจ Kachen สำรวจบริการและโซลูชันต่าง ๆ และเข้าถึงข้อมูลผลิตภัณฑ์ที่ต้องการได้ง่ายขึ้น พร้อมวางโครงสร้าง Front-end ที่สามารถนำกลับมาใช้ซ้ำและขยายต่อได้ในอนาคต",
-
-      /* -----------------------------------------------------
-         02 — DISCOVERY & INPUTS
-      ----------------------------------------------------- */
-
-      research: [
-        "ทบทวนเว็บไซต์และเนื้อหาเดิม",
-        "ทบทวนโครงสร้างหน้าและ Navigation",
-        "วาง Information Architecture",
-        "วางแนวทาง Responsive Layout",
-        "ทบทวนโครงสร้าง SEO และ Metadata",
-      ],
-
-      /* -----------------------------------------------------
-         03 — DESIGN DECISIONS
-      ----------------------------------------------------- */
-
-      decisions: [
-        {
-          title: "จัดโครงสร้างเว็บไซต์ให้แบ่งประเภทข้อมูลชัดเจน",
-
-          body: "จัดกลุ่มเนื้อหาออกเป็นส่วนต่าง ๆ เช่น ข้อมูลบริษัท บริการ โซลูชัน ผลงาน บทความ และช่องทางติดต่อ เพื่อช่วยให้ผู้ใช้เข้าใจว่าข้อมูลแต่ละประเภทควรหาได้จากส่วนใด",
-        },
-
-        {
-          title: "ทำให้ข้อมูลของโซลูชันที่ซับซ้อนอ่านได้ง่ายขึ้น",
-
-          body: "ปรับลำดับหัวข้อ การแบ่งกลุ่มเนื้อหา และ Visual Hierarchy ของหน้า Product และ Solution เพื่อให้ผู้ใช้สามารถสแกนข้อมูลสำคัญก่อนเลือกอ่านรายละเอียดเพิ่มเติม",
-        },
-
-        {
-          title: "สร้าง Component ที่สามารถนำกลับมาใช้ซ้ำได้",
-
-          body: "พัฒนาเว็บไซต์ด้วย Next.js และวาง Component ร่วมสำหรับรูปแบบที่ใช้งานซ้ำ เพื่อลดการเขียนโค้ดซ้ำและช่วยให้การเพิ่มหรือแก้ไขหน้าในอนาคตทำได้ง่ายขึ้น",
-        },
-
-        {
-          title: "เชื่อมการออกแบบกับการพัฒนาให้เป็นระบบเดียวกัน",
-
-          body: "ออกแบบ UX/UI โดยคำนึงถึงข้อจำกัดและพฤติกรรมของ Front-end ตั้งแต่ต้น ทำให้ Responsive Design, Component และโครงสร้างเนื้อหาสอดคล้องกันระหว่าง Design และ Implementation",
-        },
-      ],
-
-      /* -----------------------------------------------------
-         04 — SOLUTION
-      ----------------------------------------------------- */
-
-      process: [
-        {
-          title: "Site Architecture",
-
-          description:
-            "ปรับโครงสร้างเว็บไซต์ใหม่ให้แบ่งข้อมูลออกเป็น Home, About, Services, Solutions, Portfolio, Blog และ Contact อย่างชัดเจน เพื่อช่วยให้ผู้ใช้เข้าใจว่าข้อมูลแต่ละประเภทอยู่ตรงไหนและสามารถไปยังส่วนที่ต้องการได้ง่ายขึ้น",
-
-          image: "/images/work/kachen/site-architecture.png",
-
-          layout: "image-right",
-        },
-
-        {
-          title: "Page Structure & User Journey",
-
-          description:
-            "วางโครงสร้างหน้าหลักให้รองรับเส้นทางตั้งแต่การทำความเข้าใจ Kachen สำรวจบริการและโซลูชัน ดูรายละเอียดผลิตภัณฑ์ที่สนใจ ไปจนถึงการติดต่อเมื่อผู้ใช้ต้องการข้อมูลเพิ่มเติม",
-
-          image: "/images/work/kachen/page-structure.png",
-
-          layout: "image-left",
-        },
-
-        {
-          title: "Visual System",
-
-          description:
-            "กำหนดรูปแบบร่วมของ Typography, Spacing, Button, Card, Section Layout และ Responsive Behavior เพื่อให้แต่ละหน้ามีความสม่ำเสมอและสามารถนำรูปแบบกลับมาใช้ซ้ำได้",
-
-          image: "/images/work/kachen/visual-system.png",
-
-          layout: "image-right",
-        },
-
-        {
-          title: "Final Interface",
-
-          description:
-            "นำโครงสร้างข้อมูลและ Visual System มาพัฒนาเป็นหน้าจอ Responsive สำหรับเว็บไซต์จริง ครอบคลุมหน้า Home, Services, Solutions, Product, Portfolio, Blog และ Contact",
-
-          image: "/images/work/kachen/final-interface.png",
-
-          layout: "full",
-        },
-
-        {
-          title: "Front-end Implementation",
-
-          description:
-            "พัฒนาเว็บไซต์ใหม่ด้วย Next.js โดยใช้ Reusable Components, Responsive Layout, Shared Design Patterns และโครงสร้าง Metadata เพื่อให้เว็บไซต์สามารถดูแลและขยายต่อได้ง่ายขึ้น",
-
-          image: "/images/work/kachen/frontend-implementation.png",
-
-          layout: "image-left",
-        },
-      ],
-
-      /* -----------------------------------------------------
-         05 — REFLECTION
-      ----------------------------------------------------- */
-
-      // reflection:
-      // "โปรเจกต์นี้ช่วยให้ผมได้ใช้ทั้งมุมมองด้าน UX/UI และ Front-end กับงานเดียวกัน ทำให้ไม่ได้คิดเพียงว่าหน้าจอควรหน้าตาอย่างไร แต่รวมถึงโครงสร้างข้อมูล Responsive Behavior การนำ Component กลับมาใช้ซ้ำ และการทำให้เว็บไซต์สามารถเติบโตต่อได้ในระยะยาว",
-    },
   },
 } satisfies WorkProject;
 
@@ -845,16 +502,6 @@ const hardwareHouseLineCrmProject = {
       role: "UX/UI Designer & Front-end Developer",
       platform: "CRM Platform",
     },
-
-    th: {
-      title: "Hardware House LINE CRM",
-      subtitle: "ระบบจัดการลูกค้าและแคมเปญผ่าน LINE",
-      summary:
-        "ออกแบบขั้นตอนการจัดการลูกค้า การสื่อสาร และการทำแคมเปญให้ทีมงานใช้งานได้ง่ายและเป็นระบบมากขึ้น",
-      category: "Product Design",
-      role: "UX/UI Designer & Front-end Developer",
-      platform: "CRM Platform",
-    },
   },
 } satisfies WorkProject;
 
@@ -873,15 +520,12 @@ export const workProjects = [
    LOCALIZATION
 ========================================================= */
 
-function localizeProject(
-  project: WorkProject,
-  language: Language,
-): LocalizedWorkProject {
+function localizeProject(project: WorkProject): LocalizedWorkProject {
   const { content, ...projectData } = project;
 
   return {
     ...projectData,
-    ...content[language],
+    ...content.en,
   };
 }
 
@@ -893,9 +537,8 @@ export function getWorkProject(slug: string): WorkProject | undefined {
   return workProjects.find((project) => project.slug === slug);
 }
 
-export function getLocalizedWorkProject(
+export function getWorkProjectContent(
   slug: string,
-  language: Language,
 ): LocalizedWorkProject | undefined {
   const project = getWorkProject(slug);
 
@@ -903,19 +546,15 @@ export function getLocalizedWorkProject(
     return undefined;
   }
 
-  return localizeProject(project, language);
+  return localizeProject(project);
 }
 
-export function getLocalizedFeaturedWorks(
-  language: Language,
-): LocalizedWorkProject[] {
+export function getFeaturedWorks(): LocalizedWorkProject[] {
   return workProjects
     .filter((project) => project.featured)
-    .map((project) => localizeProject(project, language));
+    .map((project) => localizeProject(project));
 }
 
-export function getLocalizedWorkProjects(
-  language: Language,
-): LocalizedWorkProject[] {
-  return workProjects.map((project) => localizeProject(project, language));
+export function getWorkProjects(): LocalizedWorkProject[] {
+  return workProjects.map((project) => localizeProject(project));
 }

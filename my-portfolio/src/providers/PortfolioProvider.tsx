@@ -10,8 +10,6 @@ import {
   type ReactNode,
 } from "react";
 
-import type { Language } from "@/i18n";
-
 /* =========================================================
    TYPES
 ========================================================= */
@@ -20,11 +18,8 @@ type Theme = "light" | "dark";
 
 type PortfolioContextValue = {
   theme: Theme;
-  language: Language;
 
   setTheme: (theme: Theme) => void;
-
-  setLanguage: (language: Language) => void;
 };
 
 type PortfolioProviderProps = {
@@ -37,11 +32,7 @@ type PortfolioProviderProps = {
 
 const THEME_STORAGE_KEY = "portfolio-theme";
 
-const LANGUAGE_STORAGE_KEY = "portfolio-language";
-
 const DEFAULT_THEME: Theme = "light";
-
-const DEFAULT_LANGUAGE: Language = "en";
 
 /* =========================================================
    HELPERS
@@ -49,10 +40,6 @@ const DEFAULT_LANGUAGE: Language = "en";
 
 function isTheme(value: string | null): value is Theme {
   return value === "light" || value === "dark";
-}
-
-function isLanguage(value: string | null): value is Language {
-  return value === "en" || value === "th";
 }
 
 /* =========================================================
@@ -68,16 +55,12 @@ const PortfolioContext = createContext<PortfolioContextValue | null>(null);
 export function PortfolioProvider({ children }: PortfolioProviderProps) {
   const [theme, setThemeState] = useState<Theme>(DEFAULT_THEME);
 
-  const [language, setLanguageState] = useState<Language>(DEFAULT_LANGUAGE);
-
   /* =======================================================
      INITIAL SETTINGS
   ======================================================= */
 
   useEffect(() => {
     const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-
-    const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY);
 
     /* -------------------------------------------------------
        THEME
@@ -91,21 +74,10 @@ export function PortfolioProvider({ children }: PortfolioProviderProps) {
     const nextTheme: Theme = isTheme(savedTheme) ? savedTheme : systemTheme;
 
     /* -------------------------------------------------------
-       LANGUAGE
-       Default = EN
-    ------------------------------------------------------- */
-
-    const nextLanguage: Language = isLanguage(savedLanguage)
-      ? savedLanguage
-      : DEFAULT_LANGUAGE;
-
-    /* -------------------------------------------------------
        UPDATE STATE
     ------------------------------------------------------- */
 
     setThemeState(nextTheme);
-
-    setLanguageState(nextLanguage);
 
     /* -------------------------------------------------------
        UPDATE DOCUMENT
@@ -113,7 +85,7 @@ export function PortfolioProvider({ children }: PortfolioProviderProps) {
 
     document.documentElement.dataset.theme = nextTheme;
 
-    document.documentElement.lang = nextLanguage;
+    document.documentElement.lang = "en";
   }, []);
 
   /* =======================================================
@@ -129,29 +101,15 @@ export function PortfolioProvider({ children }: PortfolioProviderProps) {
   }, []);
 
   /* =======================================================
-     SET LANGUAGE
-  ======================================================= */
-
-  const setLanguage = useCallback((value: Language) => {
-    setLanguageState(value);
-
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, value);
-
-    document.documentElement.lang = value;
-  }, []);
-
-  /* =======================================================
      CONTEXT VALUE
   ======================================================= */
 
   const value = useMemo<PortfolioContextValue>(
     () => ({
       theme,
-      language,
       setTheme,
-      setLanguage,
     }),
-    [theme, language, setTheme, setLanguage],
+    [theme, setTheme],
   );
 
   /* =======================================================

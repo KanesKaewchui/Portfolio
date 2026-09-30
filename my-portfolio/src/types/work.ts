@@ -1,5 +1,3 @@
-import type { Language } from "@/i18n";
-
 /* =========================================================
    WORK LINKS
 ========================================================= */
@@ -54,7 +52,7 @@ export type WorkProcessStep = {
 
 /* =========================================================
    LOCALIZED PROJECT CONTENT
-   EN / TH
+   ENGLISH CONTENT
 ========================================================= */
 
 export type WorkProjectContent = {
@@ -125,7 +123,7 @@ export type WorkTone =
 
 /* =========================================================
    RAW PROJECT DATA
-   Shared data that does not change by language
+   Shared project data
 ========================================================= */
 
 export type WorkProject = {
@@ -167,7 +165,7 @@ export type WorkProject = {
      LOCALIZED CONTENT
   ------------------------------------------------------- */
 
-  content: Record<Language, WorkProjectContent>;
+  content: { en: WorkProjectContent };
 };
 
 /* =========================================================
@@ -175,12 +173,9 @@ export type WorkProject = {
 ========================================================= */
 
 /*
-  ใช้หลังจากเลือกภาษาแล้ว
 
-  จาก:
   project.content.en.title
 
-  เป็น:
   project.title
 */
 

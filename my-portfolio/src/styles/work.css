@@ -242,7 +242,6 @@
   display: grid;
 
   /*
-    ใช้ 6 columns เพื่อแบ่งเป็น:
 
     ROW 1
     ┌──────┬──────┬──────┐
@@ -278,7 +277,6 @@
 
   background: var(--surface);
 
-  /* Number + Title อยู่แถวเดียวกัน */
   display: grid;
   grid-template-columns: 44px minmax(0, 1fr);
 
@@ -313,7 +311,6 @@
 
   letter-spacing: 0.12em;
 
-  /* ให้อยู่ระดับเดียวกับข้อความ */
   align-self: center;
 }
 
@@ -437,7 +434,6 @@
   order: 1;
 }
 
-/* Full width — เหมาะกับ Final UI */
 .process-showcase--full {
   grid-template-columns: 1fr;
   gap: 42px;
@@ -700,7 +696,6 @@
     padding-block: 64px;
   }
 
-  /* บนมือถือให้ข้อความมาก่อนภาพเสมอ */
   .process-showcase--image-left .process-showcase-copy {
     order: 1;
   }

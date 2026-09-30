@@ -7,16 +7,13 @@ import Reveal from "@/components/ui/Reveal";
 import { backgroundPath, strengths } from "@/data/home";
 
 import { messages } from "@/i18n";
-import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
    ABOUT SECTION
 ========================================================= */
 
 export default function AboutSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].about;
+  const t = messages.en.about;
 
   return (
     <section id="about" className="section site-shell">
@@ -33,19 +30,12 @@ export default function AboutSection() {
       <div className="about-layout">
         <Reveal>
           <div className="about-copy">
-            <h2
-              className={[
-                "about-statement",
-                language === "th" ? "about-statement--th" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}>
+            <h2 className="about-statement">
               {t.statement.map((line) => (
                 <span key={line}>{line}</span>
               ))}
             </h2>
 
-            <p className="about-body">{t.description}</p>
           </div>
         </Reveal>
 
@@ -60,9 +50,9 @@ export default function AboutSection() {
                 <span className="strength-number">{item.number}</span>
 
                 <div className="strength-content">
-                  <b>{item.title[language]}</b>
+                  <b>{item.title.en}</b>
 
-                  <p>{item.body[language]}</p>
+                  <p>{item.body.en}</p>
                 </div>
               </div>
             </Reveal>
@@ -79,31 +69,20 @@ export default function AboutSection() {
           const style = {
             "--accent": item.accent,
 
-            "--hover-bg": item.hoverBg,
           } as CSSProperties;
 
           return (
             <article
-              key={item.number}
+              key={item.title.en}
               className={["path-step", item.current ? "is-current" : ""]
                 .filter(Boolean)
                 .join(" ")}
               style={style}>
-              <div className="path-topline">
-                <span className="path-number">{item.number}</span>
-
-                {item.current && (
-                  <span className="path-current">
-                    {language === "th" ? "ปัจจุบัน" : "CURRENT"}
-                  </span>
-                )}
-              </div>
-
               <span className="path-year">{item.year}</span>
 
-              <h3 className="path-title">{item.title[language]}</h3>
+              <h3 className="path-title">{item.title.en}</h3>
 
-              <p className="path-description">{item.description[language]}</p>
+              <p className="path-description">{item.description.en}</p>
 
               <span className="path-accent-line" aria-hidden="true" />
             </article>

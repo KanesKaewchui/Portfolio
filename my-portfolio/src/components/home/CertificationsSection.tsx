@@ -5,16 +5,12 @@ import Reveal from "@/components/ui/Reveal";
 import { certifications } from "@/data/home";
 import { messages } from "@/i18n";
 
-import { usePortfolio } from "@/providers/PortfolioProvider";
-
 /* =========================================================
    CERTIFICATIONS SECTION
 ========================================================= */
 
 export default function CertificationsSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].certifications;
+  const t = messages.en.certifications;
 
   return (
     <section id="certifications" className="section site-shell">
@@ -29,7 +25,6 @@ export default function CertificationsSection() {
           <h2>{t.title}</h2>
         </div>
 
-        <p>{t.description}</p>
       </div>
 
       {/* =====================================================

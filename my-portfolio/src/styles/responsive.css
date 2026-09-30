@@ -194,12 +194,6 @@
     line-height: 1.02;
   }
 
-  .hero-title--th {
-    font-size: clamp(40px, 10.4vw, 56px);
-
-    line-height: 1.2;
-  }
-
   .hero-description {
     margin-top: 42px;
 
@@ -436,30 +430,6 @@
   }
 
   /* =======================================================
-     CAPABILITIES
-  ======================================================= */
-
-  .capabilities-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .capability-title {
-    font-size: 23px;
-  }
-
-  /* -------------------------------------------------------
-     MARQUEE
-  ------------------------------------------------------- */
-
-  .capability-marquee {
-    margin-top: 56px;
-  }
-
-  .capability-marquee-item {
-    font-size: 17px;
-  }
-
-  /* =======================================================
      MORE WORK
   ======================================================= */
 
@@ -509,10 +479,6 @@
     font-size: clamp(48px, 13vw, 64px);
   }
 
-  .contact-title--th {
-    font-size: clamp(44px, 11vw, 58px);
-  }
-
   .email-link {
     max-width: 100%;
   }
@@ -530,53 +496,6 @@
   /* =======================================================
      FOOTER
   ======================================================= */
-
-  .footer-grid {
-    grid-template-columns:
-      1fr
-      auto;
-
-    column-gap: 24px;
-
-    row-gap: 32px;
-  }
-
-  /* Identity */
-
-  .footer-identity {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  /* Portfolio meta */
-
-  .footer-meta {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  /* Back to top */
-
-  .footer-back-top {
-    grid-column: 2;
-
-    grid-row: 1 / span 2;
-
-    align-self: center;
-
-    width: 86px;
-    height: 86px;
-  }
-
-  .footer-back-top-icon {
-    font-size: 23px;
-  }
-
-  .footer-back-top-label {
-    font-size: 9px;
-  }
-
-  /* Footer bottom */
 
   .footer-bottom {
     flex-direction: column;

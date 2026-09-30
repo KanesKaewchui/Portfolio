@@ -4,12 +4,10 @@ import { useState } from "react";
 
 import Link from "next/link";
 
-import LanguageToggle from "@/components/ui/LanguageToggle";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 
 import { siteConfig } from "@/config/site";
 import { messages } from "@/i18n";
-import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
    HEADER
@@ -18,8 +16,7 @@ import { usePortfolio } from "@/providers/PortfolioProvider";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  const { language } = usePortfolio();
-  const t = messages[language];
+  const t = messages.en;
 
   /* =======================================================
      NAVIGATION DATA
@@ -84,8 +81,6 @@ export default function Header() {
         ================================================= */}
 
         <div className="header-actions">
-          <LanguageToggle />
-
           <ThemeToggle />
 
           <a

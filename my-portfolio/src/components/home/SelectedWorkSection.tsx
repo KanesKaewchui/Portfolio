@@ -6,19 +6,16 @@ import Link from "next/link";
 import ProjectMockup from "@/components/home/ProjectMockup";
 import Reveal from "@/components/ui/Reveal";
 
-import { getLocalizedFeaturedWorks } from "@/data/work";
+import { getFeaturedWorks } from "@/data/work";
 import { messages } from "@/i18n";
-import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
    SELECTED WORK SECTION
 ========================================================= */
 
 export default function SelectedWorkSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].work;
-  const featuredWorks = getLocalizedFeaturedWorks(language);
+  const t = messages.en.work;
+  const featuredWorks = getFeaturedWorks();
 
   return (
     <section id="work" className="section site-shell">
@@ -58,7 +55,7 @@ export default function SelectedWorkSection() {
    TYPES
 ========================================================= */
 
-type FeaturedProjectData = ReturnType<typeof getLocalizedFeaturedWorks>[number];
+type FeaturedProjectData = ReturnType<typeof getFeaturedWorks>[number];
 
 type FeaturedProjectProps = {
   project: FeaturedProjectData;
@@ -80,6 +77,12 @@ function FeaturedProject({
   const projectNumber = String(index + 1).padStart(2, "0");
 
   const projectHref = `/work/${slug}`;
+  const figmaLink = project.links?.find(
+    (link) => link.type === "prototype" && link.href,
+  );
+  const websiteLink = project.links?.find(
+    (link) => link.type === "website" && link.href,
+  );
 
   return (
     <Reveal delay={index * 60}>
@@ -119,13 +122,45 @@ function FeaturedProject({
               PROJECT LINK
           --------------------------------------------- */}
 
-          <Link href={projectHref} className="project-link">
-            <span className="project-link-label">{exploreLabel}</span>
+          <div className="project-links">
+            <Link href={projectHref} className="project-link">
+              <span className="project-link-label">{exploreLabel}</span>
 
-            <span className="project-link-icon" aria-hidden="true">
-              ↗
-            </span>
-          </Link>
+              <span className="project-link-icon" aria-hidden="true">
+                ↗
+              </span>
+            </Link>
+
+            {figmaLink && (
+              <a
+                href={figmaLink.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link">
+                <span className="project-link-label">{figmaLink.label}</span>
+
+                <span className="project-link-icon" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            )}
+
+            {websiteLink && (
+              <a
+                href={websiteLink.href}
+                target="_blank"
+                rel="noreferrer"
+                className="project-link">
+                <span className="project-link-label">
+                  {websiteLink.label}
+                </span>
+
+                <span className="project-link-icon" aria-hidden="true">
+                  ↗
+                </span>
+              </a>
+            )}
+          </div>
         </div>
 
         {/* =================================================

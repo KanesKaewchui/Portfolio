@@ -3,7 +3,6 @@
 import DesignProcessShowcase from "@/components/work/DesignProcessShowcase";
 
 import { messages } from "@/i18n";
-import { usePortfolio } from "@/providers/PortfolioProvider";
 
 import type { LocalizedWorkProject } from "@/types/work";
 
@@ -22,9 +21,7 @@ type CaseStudyMessages = (typeof messages)[keyof typeof messages]["caseStudy"];
 ========================================================= */
 
 export default function CaseStudyContent({ project }: CaseStudyContentProps) {
-  const { language } = usePortfolio();
-
-  const t = messages[language].caseStudy;
+  const t = messages.en.caseStudy;
 
   return (
     <div className="case-content site-shell">

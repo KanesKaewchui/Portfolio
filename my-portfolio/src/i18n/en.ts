@@ -69,7 +69,7 @@ export const en = {
   ======================================================= */
 
   work: {
-    eyebrow: "02 — SELECTED PROJECTS",
+    eyebrow: "SELECTED PROJECTS",
 
     title: "Work",
 
@@ -84,7 +84,7 @@ export const en = {
   ======================================================= */
 
   about: {
-    eyebrow: "03 — ABOUT",
+    eyebrow: "ABOUT",
 
     statement: [
       "I started in Graphic Design,",
@@ -93,8 +93,6 @@ export const en = {
       "is designing digital experiences.",
     ],
 
-    description:
-      "That path helps me see design from different perspectives — visual communication, user experience, system structure, and the realities of implementation.",
   },
 
   /* =======================================================
@@ -102,12 +100,10 @@ export const en = {
   ======================================================= */
 
   experience: {
-    eyebrow: "04 — EXPERIENCE",
+    eyebrow: "EXPERIENCE",
 
     title: "Experience",
 
-    description:
-      "A career path across Graphic Design, Development, and UX/UI Design.",
   },
 
   /* =======================================================
@@ -115,55 +111,32 @@ export const en = {
   ======================================================= */
 
   certifications: {
-    eyebrow: "05 — CERTIFICATIONS",
+    eyebrow: "CERTIFICATIONS",
 
     title: "Certifications",
-
-    description:
-      "Selected courses and programs that have helped me grow across UX/UI, development, and digital product design.",
 
     viewCredential: "View credential",
   },
 
   /* =======================================================
-     06 — CAPABILITIES
-  ======================================================= */
-
-  capabilities: {
-    eyebrow: "06 — CAPABILITIES",
-
-    title: "What I do best",
-
-    description:
-      "The skills I use most often when designing products and working with development teams.",
-  },
-
-  /* =======================================================
-     07 — MORE WORK
+     06 — MORE WORK
   ======================================================= */
 
   moreWork: {
-    eyebrow: "07 — MORE WORK",
+    eyebrow: "MORE WORK",
 
     title: "More Work",
 
-    description:
-      "Websites, design work, and other projects I’ve contributed to along the way.",
   },
 
   /* =======================================================
-     08 — CONTACT
+     07 — CONTACT
   ======================================================= */
 
   contact: {
-    eyebrow: "08 — CONTACT",
-
-    availability: "OPEN TO NEW UX/UI OPPORTUNITIES",
+    eyebrow: "CONTACT",
 
     title: ["Have a product", "that could be", "simpler?"],
-
-    description:
-      "If you’re working on a website, system, or digital product that could be clearer and easier to use, I’d be happy to talk.",
 
     /* -----------------------------------------------------
        CONTACT META
@@ -184,9 +157,6 @@ export const en = {
       "Front-end Collaboration",
     ],
 
-    statusLabel: "AVAILABILITY",
-
-    status: "Open to opportunities",
   },
 
   /* =======================================================
@@ -194,12 +164,6 @@ export const en = {
   ======================================================= */
 
   footer: {
-    role: "UX/UI Designer",
-
-    portfolio: "Portfolio 2026",
-
-    builtWith: "Designed & built with Next.js",
-
     backToTop: "Back to top",
 
     signature: "UX/UI · Product Thinking · Front-end",

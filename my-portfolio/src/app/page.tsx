@@ -11,11 +11,10 @@ import Footer from "@/components/layout/Footer";
 
 import HeroSection from "@/components/home/HeroSection";
 import SelectedWorkSection from "@/components/home/SelectedWorkSection";
+import MoreWorkSection from "@/components/home/MoreWorkSection";
 import AboutSection from "@/components/home/AboutSection";
 import ExperienceSection from "@/components/home/ExperienceSection";
 import CertificationsSection from "@/components/home/CertificationsSection";
-import CapabilitiesSection from "@/components/home/CapabilitiesSection";
-import MoreWorkSection from "@/components/home/MoreWorkSection";
 import ContactSection from "@/components/home/ContactSection";
 
 /* =========================================================
@@ -30,11 +29,10 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <SelectedWorkSection />
+        <MoreWorkSection />
         <AboutSection />
         <ExperienceSection />
         <CertificationsSection />
-        <CapabilitiesSection />
-        <MoreWorkSection />
         <ContactSection />
       </main>
 

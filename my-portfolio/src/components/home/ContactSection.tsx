@@ -3,16 +3,12 @@
 import { siteConfig } from "@/config/site";
 import { messages } from "@/i18n";
 
-import { usePortfolio } from "@/providers/PortfolioProvider";
-
 /* =========================================================
    CONTACT SECTION
 ========================================================= */
 
 export default function ContactSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].contact;
+  const t = messages.en.contact;
 
   const socialLinks = [
     {
@@ -40,8 +36,6 @@ export default function ContactSection() {
 
         <div className="contact-topline">
           <p>{t.eyebrow}</p>
-
-          <p>{t.availability}</p>
         </div>
 
         {/* =================================================
@@ -51,12 +45,7 @@ export default function ContactSection() {
         <div className="contact-grid">
           <div className="contact-main">
             <h2
-              className={[
-                "contact-title",
-                language === "th" ? "contact-title--th" : "",
-              ]
-                .filter(Boolean)
-                .join(" ")}>
+            className="contact-title">
               {t.title.map((line) => (
                 <span key={line}>{line}</span>
               ))}
@@ -66,8 +55,6 @@ export default function ContactSection() {
               <span />
               <span />
             </div>
-
-            <p className="contact-copy">{t.description}</p>
 
             {/* =============================================
                 EMAIL
@@ -125,11 +112,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="contact-meta-group">
-              <span className="contact-meta-label">{t.statusLabel}</span>
-
-              <div className="status-pill">{t.status}</div>
-            </div>
           </aside>
         </div>
       </div>

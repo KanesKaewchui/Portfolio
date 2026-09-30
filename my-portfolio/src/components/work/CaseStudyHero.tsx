@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { messages } from "@/i18n";
-import { usePortfolio } from "@/providers/PortfolioProvider";
 
 import type { LocalizedWorkProject } from "@/types/work";
 
@@ -35,9 +34,7 @@ type CaseStudyCoverProps = {
 ========================================================= */
 
 export default function CaseStudyHero({ project }: CaseStudyHeroProps) {
-  const { language } = usePortfolio();
-
-  const t = messages[language].caseStudy;
+  const t = messages.en.caseStudy;
 
   const description = project.overview ?? project.summary;
 

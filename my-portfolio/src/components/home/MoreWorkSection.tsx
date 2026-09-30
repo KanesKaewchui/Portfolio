@@ -5,18 +5,14 @@ import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 
 import { moreWork } from "@/data/home";
-import { messages, type Language } from "@/i18n";
-
-import { usePortfolio } from "@/providers/PortfolioProvider";
+import { messages } from "@/i18n";
 
 /* =========================================================
    MORE WORK SECTION
 ========================================================= */
 
 export default function MoreWorkSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].moreWork;
+  const t = messages.en.moreWork;
 
   return (
     <section id="more-work" className="section site-shell">
@@ -31,7 +27,6 @@ export default function MoreWorkSection() {
           <h2>{t.title}</h2>
         </div>
 
-        <p>{t.description}</p>
       </div>
 
       {/* =====================================================
@@ -44,7 +39,7 @@ export default function MoreWorkSection() {
             key={project.title}
             className={`more-work-cell more-work-cell--${index + 1}`}>
             <Reveal delay={(index % 4) * 50}>
-              <MoreWorkItem project={project} language={language} />
+              <MoreWorkItem project={project} />
             </Reveal>
           </div>
         ))}
@@ -61,14 +56,13 @@ type MoreWorkProject = (typeof moreWork)[number];
 
 type MoreWorkItemProps = {
   project: MoreWorkProject;
-  language: Language;
 };
 
 /* =========================================================
    MORE WORK ITEM
 ========================================================= */
 
-function MoreWorkItem({ project, language }: MoreWorkItemProps) {
+function MoreWorkItem({ project }: MoreWorkItemProps) {
   const className = [
     "more-work-item",
     `tone-${project.tone}`,
@@ -105,7 +99,7 @@ function MoreWorkItem({ project, language }: MoreWorkItemProps) {
       <div className="more-work-info">
         <h3>{project.title}</h3>
 
-        <p>{project.type[language]}</p>
+        <p>{project.type.en}</p>
       </div>
     </>
   );

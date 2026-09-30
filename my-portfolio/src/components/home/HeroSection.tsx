@@ -1,16 +1,13 @@
 "use client";
 
 import { messages } from "@/i18n";
-import { usePortfolio } from "@/providers/PortfolioProvider";
 
 /* =========================================================
    HERO SECTION
 ========================================================= */
 
 export default function HeroSection() {
-  const { language } = usePortfolio();
-
-  const t = messages[language].hero;
+  const t = messages.en.hero;
 
   return (
     <section className="hero-section site-shell">
@@ -24,10 +21,7 @@ export default function HeroSection() {
           HEADLINE
       ===================================================== */}
 
-      <h1
-        className={["hero-title", language === "th" ? "hero-title--th" : ""]
-          .filter(Boolean)
-          .join(" ")}>
+      <h1 className="hero-title">
         {t.headline.map((line) => (
           <span key={line}>{line}</span>
         ))}
