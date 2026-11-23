@@ -57,11 +57,11 @@ export const strengths = [
     number: "01",
 
     title: {
-      en: "PRODUCT THINKING",
+      en: "FRONTEND DEVELOPMENT",
     },
 
     body: {
-      en: "Structure the problem around user goals, business needs, workflows, and system states.",
+      en: "Build responsive interfaces with reusable components and clear content structure.",
     },
   },
 
@@ -69,11 +69,11 @@ export const strengths = [
     number: "02",
 
     title: {
-      en: "TECHNICAL COLLABORATION",
+      en: "DESIGN TO CODE",
     },
 
     body: {
-      en: "Design with implementation constraints and engineering collaboration in mind.",
+      en: "Turn UX/UI decisions into interfaces that work across screen sizes.",
     },
   },
 
@@ -81,11 +81,11 @@ export const strengths = [
     number: "03",
 
     title: {
-      en: "VISUAL FOUNDATION",
+      en: "PRODUCT THINKING",
     },
 
     body: {
-      en: "Use hierarchy, composition, and visual clarity to make complex information easier to understand.",
+      en: "Connect user goals, workflows, and implementation details in the same solution.",
     },
   },
 ] as const;
@@ -147,16 +147,16 @@ export const backgroundPath = [
     year: "2026",
 
     title: {
-      en: "PRODUCT-FOCUSED UX/UI",
+      en: "FRONTEND DEVELOPMENT",
     },
 
     description: {
-      en: "Applying UX/UI design with stronger product thinking, system understanding, and implementation awareness.",
+      en: "Building responsive web interfaces with a foundation in design and full-stack development.",
     },
 
     accent: "#F25555",
 
-    current: false,
+    current: true,
   },
 ] as const;
 
@@ -168,33 +168,33 @@ export const moreWork = [
   {
     number: "01",
 
-    title: "TSPlus Thailand",
+    title: "SolarPole+",
 
     type: {
-      en: "Corporate Website",
+      en: "Product Design Case Study",
     },
 
-    image: "/images/work/more/tsplus-thailand.svg",
+    image: "/images/work/solarpole-plus/cover.webp",
 
-    href: "https://www.thaitsplus.com/",
+    href: "/work/solarpole-plus",
 
-    tone: "indigo",
+    tone: "green",
   },
 
   {
     number: "02",
 
-    title: "PROMPT DESIGN",
+    title: "Anti-Human Trafficking Division Platform",
 
     type: {
-      en: "Responsive Website",
+      en: "Product Design Case Study",
     },
 
-    image: "/images/work/more/promptdesign.svg",
+    image: "/images/work/anti-human/case-cover.png",
 
-    href: "https://prompt-design.code-play.net/en",
+    href: "/work/anti-human-trafficking-risk-platform",
 
-    tone: "blue",
+    tone: "indigo",
   },
 
   {

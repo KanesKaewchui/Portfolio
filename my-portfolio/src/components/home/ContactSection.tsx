@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import { siteConfig } from "@/config/site";
 import { messages } from "@/i18n";
 
@@ -9,6 +11,16 @@ import { messages } from "@/i18n";
 
 export default function ContactSection() {
   const t = messages.en.contact;
+  const [copyStatus, setCopyStatus] = useState<"idle" | "copied" | "failed">("idle");
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(siteConfig.email);
+      setCopyStatus("copied");
+    } catch {
+      setCopyStatus("failed");
+    }
+  };
 
   const socialLinks = [
     {
@@ -65,6 +77,24 @@ export default function ContactSection() {
                   ↗
                 </span>
               </a>
+              <button
+                type="button"
+                className="copy-email-button"
+                onClick={copyEmail}
+                aria-label="Copy email address">
+                {copyStatus === "copied"
+                  ? "Copied"
+                  : copyStatus === "failed"
+                    ? "Try again"
+                    : "Copy email"}
+              </button>
+              <span className="sr-only" role="status">
+                {copyStatus === "copied"
+                  ? "Email address copied"
+                  : copyStatus === "failed"
+                    ? "Could not copy email address"
+                    : ""}
+              </span>
             </div>
 
             <div className="social-links">

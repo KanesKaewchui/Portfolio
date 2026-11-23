@@ -75,13 +75,22 @@ function FeaturedProject({
 
   const projectNumber = String(index + 1).padStart(2, "0");
 
-  const projectHref = `/work/${slug}`;
+  const hasCaseStudy = Boolean(project.overview);
   const figmaLink = project.links?.find(
     (link) => link.type === "prototype" && link.href,
   );
   const websiteLink = project.links?.find(
     (link) => link.type === "website" && link.href,
   );
+  const projectHref = hasCaseStudy ? `/work/${slug}` : websiteLink?.href;
+
+  if (!projectHref) {
+    throw new Error(`Featured project ${slug} needs a case study or website link`);
+  }
+
+  const primaryLabel = hasCaseStudy
+    ? exploreLabel
+    : websiteLink?.label ?? "Visit live site";
 
   return (
     <Reveal delay={index * 60}>
@@ -99,8 +108,7 @@ function FeaturedProject({
             {projectNumber}
             {" — "}
             {category}
-            {" / "}
-            {year}
+            {year && ` / ${year}`}
           </p>
 
           {/* ---------------------------------------------
@@ -117,13 +125,25 @@ function FeaturedProject({
 
           <p>{summary}</p>
 
+          {project.highlights?.length ? (
+            <ul className="project-highlights" aria-label="Project highlights">
+              {project.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
+          ) : null}
+
           {/* ---------------------------------------------
               PROJECT LINK
           --------------------------------------------- */}
 
           <div className="project-links">
-            <Link href={projectHref} className="project-link">
-              <span className="project-link-label">{exploreLabel}</span>
+            <Link
+              href={projectHref}
+              className="project-link"
+              target={hasCaseStudy ? undefined : "_blank"}
+              rel={hasCaseStudy ? undefined : "noreferrer"}>
+              <span className="project-link-label">{primaryLabel}</span>
 
               <span className="project-link-icon" aria-hidden="true">
                 ↗
@@ -144,7 +164,7 @@ function FeaturedProject({
               </a>
             )}
 
-            {websiteLink && (
+            {hasCaseStudy && websiteLink && (
               <a
                 href={websiteLink.href}
                 target="_blank"
@@ -169,7 +189,9 @@ function FeaturedProject({
         <Link
           href={projectHref}
           className={`project-visual project-visual--${tone}`}
-          aria-label={`${exploreLabel} ${title}`}>
+          target={hasCaseStudy ? undefined : "_blank"}
+          rel={hasCaseStudy ? undefined : "noreferrer"}
+          aria-label={`${primaryLabel} ${title}`}>
           <ProjectVisual project={project} />
         </Link>
       </article>

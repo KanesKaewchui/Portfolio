@@ -10,8 +10,9 @@ import "./globals.css";
 ========================================================= */
 
 export const metadata: Metadata = {
-  title: "Kanes Kaewchui - UX/UI Designer",
-  description: "UX/UI with a Full Stack Developer background.",
+  title: "Kanes Kaewchui - Frontend Developer",
+  description:
+    "Frontend Developer building responsive web experiences with React, Next.js, and TypeScript.",
 };
 
 /* =========================================================

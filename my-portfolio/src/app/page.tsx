@@ -29,9 +29,9 @@ export default function HomePage() {
       <main>
         <HeroSection />
         <SelectedWorkSection />
+        <ExperienceSection />
         <MoreWorkSection />
         <AboutSection />
-        <ExperienceSection />
         <CertificationsSection />
         <ContactSection />
       </main>

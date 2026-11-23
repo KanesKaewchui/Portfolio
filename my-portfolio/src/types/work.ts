@@ -119,6 +119,8 @@ export type WorkTone =
   | "fixflow"
   | "hardware"
   | "kachen"
+  | "indigo"
+  | "blue"
   | "neutral";
 
 /* =========================================================
@@ -133,7 +135,7 @@ export type WorkProject = {
 
   slug: string;
 
-  year: string;
+  year?: string;
 
   featured: boolean;
 
@@ -154,6 +156,8 @@ export type WorkProject = {
 
   /* Case Study Hero */
   caseCover?: string;
+
+  highlights?: readonly string[];
 
   /* -------------------------------------------------------
      EXTERNAL LINKS

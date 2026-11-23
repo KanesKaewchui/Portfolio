@@ -1,6 +1,7 @@
 "use client";
 
 import { messages } from "@/i18n";
+import { siteConfig } from "@/config/site";
 
 /* =========================================================
    HERO SECTION
@@ -75,7 +76,11 @@ export default function HeroSection() {
           {t.primaryCta}
         </a>
 
-        <a href="#about" className="button button--ghost">
+        <a
+          href={siteConfig.social.github}
+          className="button button--ghost"
+          target="_blank"
+          rel="noreferrer">
           {t.secondaryCta}
         </a>
       </div>

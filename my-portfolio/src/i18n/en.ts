@@ -21,20 +21,20 @@ export const en = {
   ======================================================= */
 
   hero: {
-    eyebrow: "UX/UI DESIGNER",
+    eyebrow: "FRONTEND DEVELOPER",
 
     headline: [
-      "I design digital products",
-      "that make complex work",
-      "feel simple.",
+      "I build responsive",
+      "web experiences",
+      "that feel effortless.",
     ],
 
     description:
-      "I’m a UX/UI Designer with a full-stack development background. I approach design from the user, system, and implementation sides to create experiences that are clear, practical, and realistic to build.",
+      "I’m a Frontend Developer with a background in full-stack development and UX/UI design. I build clear, responsive interfaces with React, Next.js, and TypeScript, connecting thoughtful design with practical implementation.",
 
-    primaryCta: "View Work",
+    primaryCta: "View Projects",
 
-    secondaryCta: "About me",
+    secondaryCta: "GitHub",
 
     /* -----------------------------------------------------
        META
@@ -46,11 +46,11 @@ export const en = {
 
     focusLabel: "FOCUS",
 
-    focus: "UX/UI Design · Product Thinking · Design Systems",
+    focus: "React · Next.js · TypeScript",
 
-    backgroundLabel: "BACKGROUND",
+    backgroundLabel: "ALSO BRINGING",
 
-    background: "Full Stack Development",
+    background: "UX/UI Design · Full-stack Experience",
 
     /* -----------------------------------------------------
        OPTIONAL CONTENT
@@ -69,11 +69,11 @@ export const en = {
   ======================================================= */
 
   work: {
-    eyebrow: "SELECTED PROJECTS",
+    eyebrow: "FEATURED PROJECTS",
 
     title: "Work",
 
-    exploreProject: "View project",
+    exploreProject: "View case study",
   },
 
   /* =======================================================
@@ -84,10 +84,10 @@ export const en = {
     eyebrow: "ABOUT",
 
     statement: [
-      "I started in Graphic Design,",
-      "moved into Development,",
-      "and found that the work I enjoy most",
-      "is designing digital experiences.",
+      "I started in design,",
+      "grew into full-stack development,",
+      "and now build web interfaces",
+      "that are clear and practical.",
     ],
 
   },
@@ -133,7 +133,7 @@ export const en = {
   contact: {
     eyebrow: "CONTACT",
 
-    title: ["Have a product", "that could be", "simpler?"],
+    title: ["Have a web idea", "to build or", "improve?"],
 
     /* -----------------------------------------------------
        CONTACT META
@@ -150,7 +150,7 @@ export const en = {
   footer: {
     backToTop: "Back to top",
 
-    signature: "UX/UI · Product Thinking · Front-end",
+    signature: "Frontend Development · UX/UI · Product Thinking",
   },
 
   /* =======================================================
@@ -188,7 +188,7 @@ export const en = {
 
     researchEyebrow: "02 — RESEARCH & INPUTS",
 
-    researchInputs: "Research inputs",
+    researchInputs: "Project inputs",
 
     researchIntegrity: "RESEARCH INTEGRITY",
 
@@ -201,7 +201,7 @@ export const en = {
 
     decisionsEyebrow: "03 — DESIGN DECISIONS",
 
-    keyDecisions: "Key design decisions",
+    keyDecisions: "Key project decisions",
 
     /* -----------------------------------------------------
        04 — SOLUTION
@@ -209,7 +209,7 @@ export const en = {
 
     solutionEyebrow: "04 — SOLUTION",
 
-    solutionTitle: "From structure to interface",
+    solutionTitle: "From plan to interface",
 
     /* -----------------------------------------------------
        OPTIONAL LABELS

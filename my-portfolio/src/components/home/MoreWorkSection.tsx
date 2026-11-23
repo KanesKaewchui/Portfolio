@@ -108,8 +108,8 @@ function MoreWorkItem({ project }: MoreWorkItemProps) {
     return (
       <a
         href={project.href}
-        target="_blank"
-        rel="noreferrer"
+        target={project.href.startsWith("/") ? undefined : "_blank"}
+        rel={project.href.startsWith("/") ? undefined : "noreferrer"}
         className={className}
         aria-label={`View ${project.title}`}>
         {content}

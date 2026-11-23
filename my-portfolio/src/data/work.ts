@@ -7,7 +7,7 @@ import type { LocalizedWorkProject, WorkProject } from "@/types/work";
 const solarPoleProject = {
   slug: "solarpole-plus",
   year: "2026",
-  featured: true,
+  featured: false,
 
   tone: "green",
   visualType: "solarpole",
@@ -132,7 +132,7 @@ const solarPoleProject = {
 const antiHumanTraffickingProject = {
   slug: "anti-human-trafficking-risk-platform",
   year: "2026",
-  featured: true,
+  featured: false,
 
   /* =========================================================
      VISUAL
@@ -315,9 +315,11 @@ const kachenCorporateWebsiteProject = {
   /* Case Study Hero */
   caseCover: "/images/work/kachen/case-cover.png",
 
+  highlights: ["Next.js", "Responsive UI", "Reusable Components"],
+
   links: [
     {
-      label: "View in Website",
+      label: "Visit live site",
       href: "https://www.kachen.co/",
       type: "website",
     },
@@ -342,11 +344,11 @@ const kachenCorporateWebsiteProject = {
       subtitle: "Enterprise Software & Ethical AI Corporate Website",
 
       summary:
-        "Redesigned and rebuilt Kachen’s corporate website to make complex software and AI solutions easier to understand, navigate, and maintain.",
+        "Built Kachen’s corporate website with Next.js, reusable components, responsive layouts, and a clearer structure for complex software and AI content.",
 
-      category: "UX/UI + Front-end",
+      category: "Frontend Development",
 
-      role: "UX/UI Designer & Front-end Developer",
+      role: "Frontend Developer & UX/UI Designer",
 
       platform: "Corporate Website",
 
@@ -355,7 +357,7 @@ const kachenCorporateWebsiteProject = {
       ----------------------------------------------------- */
 
       overview:
-        "Kachen is a technology company offering enterprise software and AI solutions. The project focused on redesigning the corporate website and rebuilding it with Next.js, creating a clearer information structure, a more consistent user experience, and a frontend architecture that is easier to maintain and expand.",
+        "Kachen is a technology company offering enterprise software and AI solutions. I redesigned and rebuilt its corporate website with Next.js, using reusable components, responsive page layouts, and structured content to make the site easier to navigate and maintain.",
 
       problem:
         "The website needed to communicate multiple products and services with different levels of complexity while keeping the overall experience clear and consistent. The existing structure also made ongoing content updates and future expansion more difficult than necessary.",
@@ -369,7 +371,7 @@ const kachenCorporateWebsiteProject = {
       research: [
         "Existing website and content review",
         "Page and navigation structure review",
-        "Information architecture",
+        "Reusable component planning",
         "Responsive layout planning",
         "SEO and metadata structure review",
       ],
@@ -380,9 +382,9 @@ const kachenCorporateWebsiteProject = {
 
       decisions: [
         {
-          title: "Organize the website around a clearer content hierarchy",
+          title: "Build reusable components for long-term maintenance",
 
-          body: "The site was reorganized into clear sections for company information, services, solutions, portfolio, blog, and contact, helping visitors understand where different types of information belong.",
+          body: "The website was rebuilt with reusable Next.js components and shared design patterns, reducing repeated implementation and making future pages and content easier to maintain.",
         },
 
         {
@@ -392,9 +394,9 @@ const kachenCorporateWebsiteProject = {
         },
 
         {
-          title: "Build reusable components for long-term maintenance",
+          title: "Organize the website around a clearer content hierarchy",
 
-          body: "The website was rebuilt with reusable Next.js components and shared design patterns, reducing repeated implementation and making future pages and content easier to maintain.",
+          body: "The site was reorganized into clear sections for company information, services, solutions, portfolio, blog, and contact, helping visitors understand where different types of information belong.",
         },
 
         {
@@ -411,12 +413,12 @@ const kachenCorporateWebsiteProject = {
 
       process: [
         {
-          title: "Site Architecture",
+          title: "Front-end Implementation",
 
           description:
-            "Reorganized the website into a clearer hierarchy across Home, About, Services, Solutions, Portfolio, Blog, and Contact, making it easier for visitors to understand where information belongs and move between different parts of the site.",
+            "Rebuilt the website with Next.js using reusable components, responsive layouts, shared design patterns, and structured metadata to create a frontend foundation that is easier to maintain and extend.",
 
-          image: "/images/work/kachen/site-architecture.png",
+          image: "/images/work/kachen/frontend-implementation.png",
 
           layout: "image-right",
         },
@@ -455,12 +457,12 @@ const kachenCorporateWebsiteProject = {
         },
 
         {
-          title: "Front-end Implementation",
+          title: "Site Architecture",
 
           description:
-            "Rebuilt the website with Next.js using reusable components, responsive layouts, shared design patterns, and structured metadata to create a frontend foundation that is easier to maintain and extend.",
+            "Reorganized the website into a clearer hierarchy across Home, About, Services, Solutions, Portfolio, Blog, and Contact, making it easier for visitors to understand where information belongs and move between different parts of the site.",
 
-          image: "/images/work/kachen/frontend-implementation.png",
+          image: "/images/work/kachen/site-architecture.png",
 
           layout: "image-left",
         },
@@ -505,14 +507,64 @@ const hardwareHouseLineCrmProject = {
   },
 } satisfies WorkProject;
 
+const tsplusThailandProject = {
+  slug: "tsplus-thailand",
+  featured: true,
+  tone: "indigo",
+  cover: "/images/work/more/tsplus-thailand.svg",
+  links: [
+    {
+      label: "Visit live site",
+      href: "https://www.thaitsplus.com/",
+      type: "website",
+    },
+  ],
+  content: {
+    en: {
+      title: "TSPlus Thailand",
+      subtitle: "Corporate Website",
+      summary: "A corporate website for TSPlus Thailand. Explore the live site to see the finished experience.",
+      category: "Website Project",
+      role: "Frontend Developer",
+      platform: "Website",
+    },
+  },
+} satisfies WorkProject;
+
+const promptDesignProject = {
+  slug: "prompt-design",
+  featured: true,
+  tone: "blue",
+  cover: "/images/work/more/promptdesign.svg",
+  links: [
+    {
+      label: "Visit live site",
+      href: "https://prompt-design.code-play.net/en",
+      type: "website",
+    },
+  ],
+  content: {
+    en: {
+      title: "PROMPT DESIGN",
+      subtitle: "Responsive Website",
+      summary: "A responsive website for PROMPT DESIGN. Explore the live site to see the finished experience.",
+      category: "Website Project",
+      role: "Frontend Developer",
+      platform: "Website",
+    },
+  },
+} satisfies WorkProject;
+
 /* =========================================================
    WORK PROJECTS
 ========================================================= */
 
 export const workProjects = [
+  kachenCorporateWebsiteProject,
+  tsplusThailandProject,
+  promptDesignProject,
   solarPoleProject,
   antiHumanTraffickingProject,
-  kachenCorporateWebsiteProject,
   hardwareHouseLineCrmProject,
 ] as const satisfies readonly WorkProject[];
 

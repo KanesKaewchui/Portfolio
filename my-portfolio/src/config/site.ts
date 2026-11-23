@@ -9,7 +9,7 @@ export const siteConfig = {
 
   name: "Kanes Kaewchui",
 
-  role: "UX/UI Designer",
+  role: "Frontend Developer",
 
   email: "kaneskaewchui1@gmail.com",
 
@@ -22,10 +22,10 @@ export const siteConfig = {
   ======================================================= */
 
   focus: [
+    "React",
+    "Next.js",
+    "TypeScript",
     "UX/UI Design",
-    "Product Thinking",
-    "Design Systems",
-    "Front-end Collaboration",
   ],
 
   /* =======================================================
